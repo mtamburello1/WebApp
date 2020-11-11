@@ -1,0 +1,44 @@
+﻿@charset "UTF-8";
+
+
+div #product {
+    width: 30%;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+    div #product img {
+        width: 100%;
+        border: 2px solid white;
+    }
+
+div #list {
+    margin: auto;
+    width: 50%;
+    margin-bottom: 100px;
+}
+
+    div #list ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    div #list #select li {
+        background-color: brown;
+        margin-bottom: 10px;
+        text-align: center;
+        border: 1px solid white;
+        padding: 5px;
+        color: white;
+    }
+
+    div #list #select a {
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        font-family: "Global Sans Serif";
+    }
+
+        div #list #select a:hover {
+            color: black;
+        }

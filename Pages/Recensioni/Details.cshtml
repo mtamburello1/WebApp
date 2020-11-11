@@ -1,0 +1,37 @@
+﻿@page
+@model WebApp.Pages.Recensioni.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Recensione</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recensione.ValoreRecensione)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Recensione.ValoreRecensione)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recensione.TestoRecensione)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Recensione.TestoRecensione)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recensione.Opera)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Recensione.Opera.OperaId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Recensione.RecensioneId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

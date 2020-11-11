@@ -1,0 +1,63 @@
+﻿@page
+@model WebApp.Pages.Opere.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Opera</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Opera.AutoreId" class="control-label"></label>
+                <select asp-for="Opera.AutoreId" class ="form-control" asp-items="ViewBag.AutoreId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opera.Titolo" class="control-label"></label>
+                <input asp-for="Opera.Titolo" class="form-control" />
+                <span asp-validation-for="Opera.Titolo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opera.Trama" class="control-label"></label>
+                <input asp-for="Opera.Trama" class="form-control" />
+                <span asp-validation-for="Opera.Trama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opera.Contesto" class="control-label"></label>
+                <input asp-for="Opera.Contesto" class="form-control" />
+                <span asp-validation-for="Opera.Contesto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opera.Prezzo" class="control-label"></label>
+                <input asp-for="Opera.Prezzo" class="form-control" />
+                <span asp-validation-for="Opera.Prezzo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opera.VideoOpera" class="control-label"></label>
+                <input asp-for="Opera.VideoOpera" class="form-control" />
+                <span asp-validation-for="Opera.VideoOpera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Opera.FotoOpera" class="control-label"></label>
+                <input asp-for="Opera.FotoOpera" class="form-control" />
+                <span asp-validation-for="Opera.FotoOpera" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,61 @@
+﻿@page
+@model WebApp.Pages.Opere.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Opera</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.Titolo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.Titolo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.Trama)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.Trama)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.Contesto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.Contesto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.Prezzo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.Prezzo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.VideoOpera)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.VideoOpera)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.FotoOpera)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.FotoOpera)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.Autore)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.Autore.AutoreId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Opera.OperaId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

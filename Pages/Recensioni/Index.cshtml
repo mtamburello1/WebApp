@@ -1,0 +1,48 @@
+﻿@page
+@model WebApp.Pages.Recensioni.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Recensione[0].ValoreRecensione)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recensione[0].TestoRecensione)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Recensione[0].Opera)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Recensione) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValoreRecensione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestoRecensione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opera.OperaId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RecensioneId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RecensioneId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RecensioneId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

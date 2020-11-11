@@ -1,0 +1,64 @@
+﻿@page
+@model WebApp.Pages.Opere.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Opera</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.Titolo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.Titolo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.Trama)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.Trama)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.Contesto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.Contesto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.Prezzo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.Prezzo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.VideoOpera)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.VideoOpera)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.FotoOpera)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.FotoOpera)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.Autore)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.Autore.AutoreId)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Opera.OperaId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
