@@ -1,0 +1,20 @@
+﻿@page
+@model WebApp.Pages.Opere.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<link rel="stylesheet" href="~/css/ListItemStyle.css" type="text/css" />
+
+<div class="container">
+    <div class="titolo">
+        <h1>Scegli un'opera e divertiti</h1>
+    </div>
+    <div class="row">
+        @foreach (var item in Model.Opera)
+        {
+            <div class="col-xs" id="product">
+                <a asp-page="./ProductDetailsProva/@item.OperaId"  id="button" title="Visualizza la scheda prodotto"><img src="@Html.DisplayFor(modelItem => item.FotoOpera)" alt="NOT FOUND" class="image"></a>
+            </div>
+        }
+    </div>
+</div>
