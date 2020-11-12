@@ -14,6 +14,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Autore[0].NomeAutore)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Autore[0].FotoAutore)
             </th>
             <th>
@@ -22,15 +25,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Autore[0].StoriaAutore)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Autore[0].NomeAutore)
-            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Autore) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeAutore)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FotoAutore)
             </td>
@@ -39,9 +42,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.StoriaAutore)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeAutore)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.AutoreId">Edit</a> |

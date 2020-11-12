@@ -18,8 +18,8 @@ namespace WebApp.Data
 
         public DbSet<WebApp.Models.Opera> Opera { get; set; }
 
-        public DbSet<WebApp.Models.Recensione> Recensione { get; set; }
-
         public DbSet<WebApp.Models.Personaggio> Personaggio { get; set; }
+
+        public DbSet<WebApp.Models.Recensione> Recensione { get; set; }
     }
 }

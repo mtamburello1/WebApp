@@ -13,7 +13,9 @@
         @foreach (var item in Model.Opera)
         {
                 <div class="col-xs" id="product">
-                    <a asp-page="./ProductDetails" asp-route-id="@item.OperaId" id="button" title="Visualizza la scheda prodotto"><img src="/img/@Html.DisplayFor(modelItem => item.FotoOpera)" alt="NOT FOUND" class="image"></a>
+                   
+                         <a asp-page="./ProductDetails" asp-route-id="@item.OperaId" id="button" title="Visualizza la scheda prodotto"><img src="/img/@Html.DisplayFor(modelItem => item.FotoOpera)" alt="NOT FOUND" class="image"></a>
+                  
                 </div>
 
             }

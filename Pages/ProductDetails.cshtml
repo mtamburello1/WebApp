@@ -17,8 +17,8 @@
     <div class="row">
         <div class="col-xs-3" id="list">
             <ul id="select">
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Trama</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">L'autore</a></li>
+                <li><a asp-page="./Trama" asp-route-id="@Request.Query["id"].ToString()">Trama</a></li>
+                <li><a asp-page="./Autore" asp-route-id="@Request.Query["id"].ToString()">L'autore</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="Index">Contesto</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="Index">Personaggi</a></li>
                 <li><a asp-area="" asp-controller="Home" asp-action="Index">Recensioni</a></li>

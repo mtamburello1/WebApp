@@ -2,7 +2,7 @@
 
 namespace WebApp.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,10 +12,10 @@ namespace WebApp.Migrations
                 {
                     AutoreId = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    NomeAutore = table.Column<string>(nullable: true),
                     FotoAutore = table.Column<string>(nullable: true),
                     VideoAutore = table.Column<string>(nullable: true),
-                    StoriaAutore = table.Column<string>(nullable: true),
-                    NomeAutore = table.Column<string>(nullable: true)
+                    StoriaAutore = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

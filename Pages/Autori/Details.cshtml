@@ -12,6 +12,12 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Autore.NomeAutore)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Autore.NomeAutore)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Autore.FotoAutore)
         </dt>
         <dd class="col-sm-10">
@@ -28,12 +34,6 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Autore.StoriaAutore)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Autore.NomeAutore)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Autore.NomeAutore)
         </dd>
     </dl>
 </div>

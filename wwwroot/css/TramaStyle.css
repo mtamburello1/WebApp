@@ -1,0 +1,9 @@
+﻿#video, #text {
+    height: 50%;
+    margin-top: 100px;
+    background-color: white;
+    border-radius: 40px;
+    color: black;
+}
+
+     

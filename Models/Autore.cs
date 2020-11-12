@@ -10,13 +10,13 @@ namespace WebApp.Models
     {
         [Key] public long AutoreId { get; set; }
 
+        public string NomeAutore { get; set; }
+
         public string FotoAutore { get; set; }
 
         public string VideoAutore { get; set; }
 
         public string StoriaAutore { get; set; }
-
-        public string NomeAutore { get; set; }
 
         public virtual ICollection<Opera> Opere { get; set; }
 

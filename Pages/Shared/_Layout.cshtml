@@ -33,7 +33,9 @@
                     <li><a href="" onclick="changeTextSize(+2)">Ingrandisci testo</a></li>
                     <li><a href="" onclick="changeTextSize(-2)">Diminuisci testo</a></li>
                     <li><a href="/Index">Torna ai titoli</a></li>
-                    <li><a asp-page="./ProductDetails" asp-route-id="">Torna al menù dell'opera</a></li>
+                    @if(Context.Request.Query["id"].ToString() != null) { 
+                        <li><a asp-page="./ProductDetails" asp-route-id="@Context.Request.Query["id"].ToString()">Torna al menù dell'opera</a></li>
+                    }
                     <li><a href="#">Lascia uno sticker</a></li>
                     <li><a href="#">Lascia un commento</a></li>
                     <li><a href="#">Acquista</a></li>
