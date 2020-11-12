@@ -8,13 +8,26 @@
 <div class="container">
     <div class="titolo">
         <h1>Scegli un'opera e divertiti</h1>
+        
+    <div class="container">
+        <div class="row">
+            @{
+                var i = 0;
+            }
+            @foreach (var item in Model.Opera)
+            {
+                <div class="col" align="center">
+                    <a asp-page="./ProductDetailsProva/@item.OperaId" id="button" title="Visualizza la scheda prodotto"><img src="@Html.DisplayFor(modelItem => item.FotoOpera)" alt="NOT FOUND" class="image" width="150" style="margin: 0px 0px 20px 0px"></a>
+                </div>
+                i = i+1;
+                if (i == 2) 
+                { 
+                    i = 0;
+                    <div class="w-100"></div>
+                }
+            }
+        </div>
     </div>
-    <div class="row">
-        @foreach (var item in Model.Opera)
-        {
-            <div class="col-xs" id="product">
-                <a asp-page="./ProductDetailsProva/@item.OperaId"  id="button" title="Visualizza la scheda prodotto"><img src="@Html.DisplayFor(modelItem => item.FotoOpera)" alt="NOT FOUND" class="image"></a>
-            </div>
-        }
-    </div>
+
+
 </div>
