@@ -1,5 +1,5 @@
 ﻿@page
-@model IndexModel
+@model WebApp.Pages.Opere.IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
@@ -10,25 +10,13 @@
         <h1>Scegli un'opera e divertiti</h1>
     </div>
     <div class="row">
-        @for (int i = 0; i < 5; i++)
+        @foreach (var item in Model.Opera)
         {
-            <div class="col-xs" id="product">
-                <a asp-page="./ProductDetails" id="button" title="Visualizza la scheda prodotto"><img src="~/css/libro1.jpg" alt="NOT FOUND" class="image"></a>
-            </div>
+                <div class="col-xs" id="product">
+                    <a asp-page="./ProductDetails" asp-route-id="@item.OperaId" id="button" title="Visualizza la scheda prodotto"><img src="/img/@Html.DisplayFor(modelItem => item.FotoOpera)" alt="NOT FOUND" class="image"></a>
+                </div>
 
-            <div class="col-xs" id="product">
-                <a asp-page="./ProductDetails" id="button" title="Visualizza la scheda prodotto"><img src="~/css/libro2.jpg" alt="NOT FOUND" class="image"></a>
-            </div>
+            }
 
-            <div class="col-xs" id="product">
-                <a asp-page="./ProductDetails" id="button" title="Visualizza la scheda prodotto"><img src="~/css/libro1.jpg" alt="NOT FOUND" class="image"></a>
-            </div>
-
-            <div class="col-xs" id="product">
-                <a asp-page="./ProductDetails" id="button" title="Visualizza la scheda prodotto"><img src="~/css/libro2.jpg" alt="NOT FOUND" class="image"></a>
-            </div>
-
-        }
-
-    </div>
+        </div>
 </div>

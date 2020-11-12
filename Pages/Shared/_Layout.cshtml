@@ -30,10 +30,10 @@
                 but hey, it's pure CSS magic.
                 -->
                 <ul id="menu">
-                    <li><a href="#">Ingrandisci testo</a></li>
-                    <li><a href="#">Diminuisci testo</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Torna ai titoli</a></li>
-                    <li><a href="#">Torna al menù dell'opera</a></li>
+                    <li><a href="" onclick="changeTextSize(+2)">Ingrandisci testo</a></li>
+                    <li><a href="" onclick="changeTextSize(-2)">Diminuisci testo</a></li>
+                    <li><a href="/Index">Torna ai titoli</a></li>
+                    <li><a asp-page="./ProductDetails" asp-route-id="">Torna al menù dell'opera</a></li>
                     <li><a href="#">Lascia uno sticker</a></li>
                     <li><a href="#">Lascia un commento</a></li>
                     <li><a href="#">Acquista</a></li>
@@ -42,7 +42,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-3" id="title">
-                            <a asp-area="" asp-controller="Home" asp-action="Index"><h1><i>Sorsi di Versi</i></h1></a>
+                            <a href="/Index"><h1><i>Sorsi di Versi</i></h1></a>
                         </div>
                     </div>
                 </div>
@@ -72,6 +72,9 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
 
