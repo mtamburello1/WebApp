@@ -24,7 +24,9 @@ namespace WebApp.Pages.Opere
         public async Task OnGetAsync()
         {
             Opera = await _context.Opera
-                .Include(o => o.Autore).ToListAsync();
+                .Include(o => o.Autore)
+                .AsNoTracking()
+                .ToListAsync();
         }
     }
 }

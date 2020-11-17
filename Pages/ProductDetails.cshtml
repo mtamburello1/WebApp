@@ -1,6 +1,7 @@
-﻿@page
+﻿@page  
 @model WebApp.Pages.Opere.DetailsModel
 @{
+
     ViewData["Title"] = "ProductDetails";
 }
 <link rel="stylesheet" href="~/css/ProductDetailsStyle.css" type="text/css" />
@@ -17,13 +18,13 @@
     <div class="row">
         <div class="col-xs-3" id="list">
             <ul id="select">
-                <li><a asp-page="./Trama" asp-route-id="@Request.Query["id"].ToString()">Trama</a></li>
-                <li><a asp-page="./Autore" asp-route-id="@Request.Query["id"].ToString()">L'autore</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Contesto</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Personaggi</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Recensioni</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Lascia un commento</a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">Acquista</a></li>
+                <li><a asp-page="./Trama" asp-route-id="@Request.Query["id"].ToString()"><b>Trama</b></a></li>
+                <li><a asp-page="./Autore" asp-route-id="@Request.Query["id"].ToString()"><b>L'autore</b></a></li>
+                <li><a asp-page="./Contesto" asp-route-id="@Request.Query["id"].ToString()"><b>Contesto</b></a></li>
+                <li><a asp-page="./Personaggi" asp-route-id="@Request.Query["id"].ToString()"><b>Personaggi</b></a></li>
+                <li><a asp-page="./Reviews" asp-route-id="@Request.Query["id"].ToString()"><b>Recensioni</b></a></li>
+                <li><a asp-page="./AggiuntaRecensione" asp-route-id="@Request.Query["id"].ToString()"><b>Lascia un commento</b></a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index"><b>Acquista</b></a></li>
             </ul>
         </div>
     </div>

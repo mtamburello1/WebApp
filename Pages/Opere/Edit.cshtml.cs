@@ -37,7 +37,7 @@ namespace WebApp.Pages.Opere
             {
                 return NotFound();
             }
-           ViewData["AutoreId"] = new SelectList(_context.Autore, "AutoreId", "AutoreId");
+           ViewData["AutoreId"] = new SelectList(_context.Autore, "AutoreId", "NomeAutore");
             return Page();
         }
 

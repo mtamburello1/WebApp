@@ -48,10 +48,16 @@
             @Html.DisplayFor(model => model.Opera.FotoOpera)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Opera.Voto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Opera.Voto)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Opera.Autore)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Opera.Autore.AutoreId)
+            @Html.DisplayFor(model => model.Opera.Autore.NomeAutore)
         </dd>
     </dl>
 </div>

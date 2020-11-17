@@ -1,17 +1,25 @@
-﻿@page
-@model WebApp.Pages.Opere.DetailsModel
+﻿@page "{id:int}"
+@model WebApp.Pages.TramaModel
 @{
     ViewData["Title"] = "Trama";
 }
 <link rel="stylesheet" href="~/css/TramaStyle.css" type="text/css" />
 
 <div class="container" id="video">
-            <video src="@Html.DisplayFor(model => model.Opera.VideoOpera)" alt="NOT FOUND"></video>
+    <div class="row">
+        <div class="col-sm" id="img">
+            <video src="~/img/VideoAutori/@Html.DisplayFor(model => model.Opera.Trama)" alt="NOT FOUND"></video>
+        </div>
+    </div>
 </div>
 
 <div class="container" id="text">
-    <p>
-        @Html.DisplayFor(model => model.Opera.Trama)
-    </p>
+    <div class="row">
+        <div class="col-xs-3" id="col">
+            <h4><b>@Html.DisplayFor(model => model.Opera.Titolo)</b></h4>
+            <p>
+                @Html.DisplayFor(model => model.Opera.Trama)
+            </p>
+        </div>
+    </div>
 </div>
-

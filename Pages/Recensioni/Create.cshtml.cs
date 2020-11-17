@@ -21,7 +21,7 @@ namespace WebApp.Pages.Recensioni
 
         public IActionResult OnGet()
         {
-        ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "OperaId");
+        ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "Titolo");
             return Page();
         }
 

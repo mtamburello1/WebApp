@@ -1,11 +1,11 @@
-﻿@page
+﻿@page 
 @model WebApp.Pages.Autori.IndexModel
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Autori</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -13,9 +13,6 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Autore[0].NomeAutore)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Autore[0].FotoAutore)
             </th>
@@ -25,30 +22,34 @@
             <th>
                 @Html.DisplayNameFor(model => model.Autore[0].StoriaAutore)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Autore[0].NomeAutore)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Autore) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeAutore)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FotoAutore)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VideoAutore)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StoriaAutore)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.AutoreId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.AutoreId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.AutoreId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Autore)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FotoAutore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VideoAutore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StoriaAutore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeAutore)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.AutoreId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.AutoreId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.AutoreId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

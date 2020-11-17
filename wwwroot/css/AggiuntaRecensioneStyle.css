@@ -1,0 +1,33 @@
+﻿html, body {
+    height:auto;
+}
+
+#container {
+    margin: 150px auto;
+}
+
+
+.rating-header {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+
+
+.btn-primary {
+    background-color: brown;
+    color: white;
+    border-color: brown;
+    margin-top: 50px;
+    width:50%;
+
+}
+
+    .btn-primary:hover,  input[type]:active {
+        background-color: white;
+        color: brown;
+        border: 2px solid brown;
+        font-weight: 500;
+    }
+
+

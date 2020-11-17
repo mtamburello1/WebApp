@@ -37,7 +37,7 @@ namespace WebApp.Pages.Recensioni
             {
                 return NotFound();
             }
-           ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "OperaId");
+           ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "Titolo");
             return Page();
         }
 

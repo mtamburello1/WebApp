@@ -1,11 +1,11 @@
-﻿@page
+﻿@page 
 @model WebApp.Pages.Opere.IndexModel
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Opere</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
@@ -32,41 +32,48 @@
                 @Html.DisplayNameFor(model => model.Opera[0].FotoOpera)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Opera[0].Voto)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Opera[0].Autore)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Opera) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Titolo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Trama)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contesto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Prezzo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VideoOpera)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FotoOpera)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Autore.AutoreId)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.OperaId">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.OperaId">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.OperaId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Opera)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titolo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Trama)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contesto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prezzo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VideoOpera)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FotoOpera)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Voto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Autore.NomeAutore)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.OperaId">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.OperaId">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.OperaId">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

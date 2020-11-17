@@ -1,0 +1,78 @@
+﻿body {
+    font-family:"Global Serif" !important;
+}
+
+
+#container {
+    margin-top: 150px;
+    margin-bottom:200px;
+}
+
+
+.review-block {
+    background-color: rgb(255,255,255);
+    background-color: rgba(255,255,255, 0.9);
+    padding: 15px;
+    border-radius: 40px;
+    margin-bottom: 15px;
+}
+
+.review-block-name {
+    font-size: 12px;
+    margin: 10px 0;
+    padding-left:10px;
+}
+
+.review-block-date {
+    font-size: 12px;
+    padding-left: 10px;
+}
+
+.review-block-rate {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.review-block-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.review-block-description {
+    font-size: 13px;
+}
+
+/*Parte superiore*/
+.glyphicon {
+    margin-right: 5px;
+}
+
+.well-sm {
+    padding: 20px !important;
+    border-radius: 40px !important;
+}
+
+.rating .glyphicon {
+    font-size: 22px;
+}
+
+.rating-num {
+    margin-top: 0px;
+    font-size: 54px;
+}
+
+.progress {
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    text-align: left;
+    background-color: brown !important;
+}
+
+.rating-desc .col-md-3 {
+    padding-right: 0px;
+}
+
+

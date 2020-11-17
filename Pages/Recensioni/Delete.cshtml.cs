@@ -21,6 +21,7 @@ namespace WebApp.Pages.Recensioni
 
         [BindProperty]
         public Recensione Recensione { get; set; }
+        public Opera Opera { get; set; }
 
         public async Task<IActionResult> OnGetAsync(long? id)
         {
@@ -30,7 +31,8 @@ namespace WebApp.Pages.Recensioni
             }
 
             Recensione = await _context.Recensione
-                .Include(r => r.Opera).FirstOrDefaultAsync(m => m.RecensioneId == id);
+                .Include(r => r.Opera)
+                .FirstOrDefaultAsync(m => m.RecensioneId == id);
 
             if (Recensione == null)
             {
@@ -46,15 +48,53 @@ namespace WebApp.Pages.Recensioni
                 return NotFound();
             }
 
-            Recensione = await _context.Recensione.FindAsync(id);
+            Recensione = await _context.Recensione
+                .FindAsync(id);
 
-            if (Recensione != null)
+            Opera= await _context.Opera
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.OperaId == Recensione.OperaId);
+
+            if (Recensione != null && Opera !=null)
             {
+                UpdateOpera();
+                _context.Attach(Opera).State = EntityState.Modified;
                 _context.Recensione.Remove(Recensione);
                 await _context.SaveChangesAsync();
             }
 
             return RedirectToPage("./Index");
+        }
+
+
+        private void UpdateOpera()
+        {
+
+            Opera.NumeroVoti--;
+
+            if (Recensione.ValoreRecensione == 1)
+            {
+                Opera.OneStars -= 1;
+            }
+            else if (Recensione.ValoreRecensione == 2)
+            {
+                Opera.TwoStars -= 1;
+            }
+            else if (Recensione.ValoreRecensione == 3)
+            {
+                Opera.ThreeStars -= 1;
+            }
+            else if (Recensione.ValoreRecensione == 4)
+            {
+                Opera.FourStars -= 1;
+            }
+            else if (Recensione.ValoreRecensione == 5)
+            {
+                Opera.FiveStars -= 1;
+            }
+
+            Opera.Voto = (Opera.OneStars + (Opera.TwoStars * 2) + (Opera.ThreeStars * 3) + (Opera.FourStars * 4) + (Opera.FiveStars * 5)) / Opera.NumeroVoti;
+
         }
     }
 }

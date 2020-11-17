@@ -1,15 +1,24 @@
-﻿@page
-@model WebApp.Pages.Autori.DetailsModel
+﻿@page "{id:int}"
+@model WebApp.Pages.AutoreModel
 @{
 }
-<link rel="stylesheet" href="~/css/TramaStyle.css" type="text/css" />
+<link rel="stylesheet" href="~/css/AutoreStyle.css" type="text/css" />
 
-<div class="container" id="video">
-    <img src="@Html.DisplayFor(model => model.Autore.FotoAutore)" alt="NOT FOUND">
+<div class="container" id="image">
+    <div class="row">
+        <div class="col-sm" id="img">
+            <img src="/img/Autori/@Html.DisplayFor(model => model.Opera.Autore.FotoAutore)" alt="NOT FOUND">
+        </div>
+    </div>
 </div>
 
 <div class="container" id="text">
-    <p>
-        Ciao 
-    </p>
+    <div class="row">
+        <div class="col-xs-3" id="col">
+            <h4><b>@Html.DisplayFor(model => model.Opera.Autore.NomeAutore)</b></h4>
+            <p>
+                @Html.DisplayFor(model => model.Opera.Autore.StoriaAutore)
+            </p>
+        </div>
+    </div>
 </div>

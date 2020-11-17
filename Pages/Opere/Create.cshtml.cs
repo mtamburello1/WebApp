@@ -21,7 +21,7 @@ namespace WebApp.Pages.Opere
 
         public IActionResult OnGet()
         {
-        ViewData["AutoreId"] = new SelectList(_context.Autore, "AutoreId", "AutoreId");
+        ViewData["AutoreId"] = new SelectList(_context.Autore, "AutoreId", "NomeAutore");
             return Page();
         }
 

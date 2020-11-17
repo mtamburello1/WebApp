@@ -19,6 +19,12 @@
             @Html.DisplayFor(model => model.Recensione.ValoreRecensione)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recensione.Titolo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Recensione.Titolo)
+        </dd>
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Recensione.TestoRecensione)
         </dt>
         <dd class="col-sm-10">
@@ -28,7 +34,7 @@
             @Html.DisplayNameFor(model => model.Recensione.Opera)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Recensione.Opera.OperaId)
+            @Html.DisplayFor(model => model.Recensione.Opera.Titolo)
         </dd>
     </dl>
     

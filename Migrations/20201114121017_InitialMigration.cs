@@ -12,10 +12,10 @@ namespace WebApp.Migrations
                 {
                     AutoreId = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NomeAutore = table.Column<string>(nullable: true),
                     FotoAutore = table.Column<string>(nullable: true),
                     VideoAutore = table.Column<string>(nullable: true),
-                    StoriaAutore = table.Column<string>(nullable: true)
+                    StoriaAutore = table.Column<string>(nullable: true),
+                    NomeAutore = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -34,7 +34,8 @@ namespace WebApp.Migrations
                     Contesto = table.Column<string>(nullable: true),
                     Prezzo = table.Column<float>(nullable: false),
                     VideoOpera = table.Column<string>(nullable: true),
-                    FotoOpera = table.Column<string>(nullable: true)
+                    FotoOpera = table.Column<string>(nullable: true),
+                    Voto = table.Column<float>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -75,6 +76,7 @@ namespace WebApp.Migrations
                     RecensioneId = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ValoreRecensione = table.Column<float>(nullable: false),
+                    Titolo = table.Column<string>(nullable: true),
                     TestoRecensione = table.Column<string>(nullable: true),
                     OperaId = table.Column<long>(nullable: false)
                 },
