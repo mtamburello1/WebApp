@@ -1,28 +1,52 @@
-﻿.container {
+﻿@charset "UTF-8";
+
+html {
+    width: 100%;
+    height: auto;
+}
+
+.container {
     height:100%;
     font-family: "Global Serif";
 }
 
+#container {
+    margin-top:50px;
+}
+
+    #container h1 {
+        font-family: "Global Serif";
+        margin-bottom: 20px;
+    }
+
 #video, #text {
-    height: 50%;
-    margin-top: 100px;
+    height: auto;
+    margin-top: 50px;
+    margin-left:0;
     background-color: rgb(255,255,255);
     background-color: rgba(255,255,255,0.8);
     border-radius: 40px;
     color: black;
-    width: 50%;
+    width: 100%;
     padding: 0;
+
 }
 
 #text {
     margin-bottom:200px;
 }
 
+    #text h5 {
+        text-transform:uppercase;
+    }
+
 
 div #col {
     width:85%;
     margin:20px auto;
     padding:20px;
+    font-size:20px;
+    text-align: left;
 }
 
 #image .row {
@@ -31,7 +55,7 @@ div #col {
 }
 
 div #img {
-    padding: 30px;
+    padding: 10px;
     margin: 0 auto;
     width: 100%;
 }
@@ -43,7 +67,36 @@ div #img {
         border-radius: 40px;
     }
 
+@media screen and (max-width: 992px) {
+    #container h1 {
+        padding-left: 20px;
+        font-size: 20px;
+    }
 
+    div #img {
+        padding:10px;
+    }
+
+    div #col {
+        width: 100%;
+        margin: 20px auto;
+        padding: 0;
+        font-size: 16px;
+    }
+
+    #text {
+        padding: 15px 10px;
+        margin-bottom: 100px;
+    }
+
+    #video, #text {
+        margin-top: 50px;
+    }
+
+        #text h5 {
+            font-size: 18px;
+        }
+}
 
 
 

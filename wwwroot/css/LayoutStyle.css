@@ -1,4 +1,6 @@
-﻿html, body {
+﻿@charset "UTF-8";
+
+html, body {
     min-height: 100%;
     width: 100%;
     margin: 0;
@@ -6,7 +8,7 @@
 }
 
 body {
-    background-image: url(sfondo.jpg);
+    background-image: url(Sfondo/SfondoMaxi.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -40,8 +42,13 @@ nav {
         font-family: "Global Serif";
     }
 
+    nav .container {
+        width:100%;
+        max-width:none !important;
+    }
+
 div .burger {
-    width: 35%;
+    width: 40px;
     float: left;
     padding-top: 20px;
 }
@@ -167,7 +174,10 @@ div .burger {
 
 footer .container {
     color: white;
+    left: 0;
     margin-left: 0;
+    bottom: 0;
+    position: relative;
 }
 
 
@@ -178,7 +188,18 @@ footer .container {
     }
 
     body {
+        background-image:url("Sfondo/SfondoMini.jpg");
         width: inherit;
         height: inherit;
     }
+
+    .container #title {
+        width: 100%;
+    }
+
+    nav h1 {
+        font-size:35px;
+    }
 }
+
+

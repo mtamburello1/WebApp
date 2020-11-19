@@ -14,7 +14,6 @@ namespace WebApp.Models
         {
             Personaggi = new HashSet<Personaggio>();
             Recensioni = new HashSet<Recensione>();
-            Voto = 0;
             NumeroVoti = 0;
             FiveStars = 0;
             FourStars = 0;
@@ -45,9 +44,6 @@ namespace WebApp.Models
 
         [Display(Name = "Path foto")]
         public string FotoOpera { get; set; }
-
-        [Range(0, 5)]
-        public float? Voto { get; set; }
 
         public int NumeroVoti { get; set; }
 

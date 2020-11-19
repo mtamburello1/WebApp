@@ -28,5 +28,5 @@ namespace WebApp.Pages.Opere
                 .AsNoTracking()
                 .ToListAsync();
         }
-    }
+    }   
 }

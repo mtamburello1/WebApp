@@ -18,75 +18,75 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-6 text-center">
                         <h1 class="rating-num">
-                            @Html.DisplayFor(model => model.Opera.Voto)
+                            @ViewBag.Voto
                         </h1>
                         <div class="rating">
-                            @for (int i = 0; i < @Model.Opera.Voto; i++)
+                            @for (int i = 0; i < @ViewBag.Voto; i++)
                             {
                                 <span class="glyphicon glyphicon-star"></span>
                             }
-                            @for (int i = 0; i < 5 - @Model.Opera.Voto; i++)
+                            @for (int i = 0; i < 5 - @ViewBag.Voto; i++)
                             {
                                 <span class="glyphicon glyphicon-star-empty"></span>
                             }
                         </div>
-                        <div>
-                            <span class="glyphicon glyphicon-user"></span>@Html.DisplayFor(model => model.Opera.NumeroVoti)
+                        <div id="voti">
+                            <span class="glyphicon glyphicon-user"></span>@ViewBag.NumeroVoti
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-6">
                         <div class="row rating-desc">
                             <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>5
+                                <span class="glyphicon glyphicon-star"></span><b>5</b>
                             </div>
                             <div class="col-xs-8 col-md-9">
                                 <div class="progress progress-striped">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@((Model.Opera.TwoStars*100)/Model.Opera.NumeroVoti)"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: @((Model.Opera.FiveStars*100)/Model.Opera.NumeroVoti)%">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@ViewBag.FiveStars"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: @ViewBag.FiveStars%">
                                     </div>
                                 </div>
                             </div>
                             <!-- end 5 -->
                             <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>4
+                                <span class="glyphicon glyphicon-star"></span><b>4</b>
                             </div>
                             <div class="col-xs-8 col-md-9">
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@((Model.Opera.TwoStars*100)/Model.Opera.NumeroVoti)"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: @((Model.Opera.FourStars*100)/Model.Opera.NumeroVoti)%">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="@ViewBag.FourStars"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: @ViewBag.FourStars%">
                                     </div>
                                 </div>
                             </div>
                             <!-- end 4 -->
                             <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>3
+                                <span class="glyphicon glyphicon-star"></span><b>3</b>
                             </div>
                             <div class="col-xs-8 col-md-9">
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="@((Model.Opera.TwoStars*100)/Model.Opera.NumeroVoti)"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: @((Model.Opera.ThreeStars*100)/Model.Opera.NumeroVoti)%">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="@ViewBag.ThreeStars"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: @ViewBag.ThreeStars%">
                                     </div>
                                 </div>
                             </div>
                             <!-- end 3 -->
                             <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>2
+                                <span class="glyphicon glyphicon-star"></span><b>2</b>
                             </div>
                             <div class="col-xs-8 col-md-9">
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="@((Model.Opera.TwoStars*100)/Model.Opera.NumeroVoti)"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: @((Model.Opera.TwoStars*100)/Model.Opera.NumeroVoti)%">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="@ViewBag.TwoStars"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: @ViewBag.TwoStars%">
                                     </div>
                                 </div>
                             </div>
                             <!-- end 2 -->
                             <div class="col-xs-3 col-md-3 text-right">
-                                <span class="glyphicon glyphicon-star"></span>1
+                                <span class="glyphicon glyphicon-star"></span><b>1</b>
                             </div>
                             <div class="col-xs-8 col-md-9">
                                 <div class="progress">
-                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="@((Model.Opera.TwoStars*100)/Model.Opera.NumeroVoti)"
-                                         aria-valuemin="0" aria-valuemax="100" style="width: @((Model.Opera.OneStars*100)/Model.Opera.NumeroVoti)%">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="@ViewBag.OneStars"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: @ViewBag.OneStars%">
                                     </div>
                                 </div>
                             </div>
@@ -106,10 +106,11 @@
                 @foreach (var item in Model.Opera.Recensioni)
                 {
                     <div class="row">
-                        <div class="col-sm-3">
-                            <div class="review-block-name"><a href="#">@item.NomeRecensore</a></div>
+                        <div class="col-sm-3 text-center" id="userReview">
+                            <img class="rounded-circle reviewer" src="~/css/Sfondo/avatar.png">
+                            <div class="review-block-name"><a href="#">Martina @item.NomeRecensore</a></div>
                         </div>
-                        <div class="col-sm-9">
+                        <div class="col-sm-9" id="textReview">
                             <div class="review-block-rate">
                                 @for (int i = 0; i < item.ValoreRecensione; i++)
                                 {

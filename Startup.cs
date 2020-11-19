@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,7 +28,7 @@ namespace WebApp
             services.AddRazorPages();
 
             services.AddDbContext<WebAppContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("WebAppContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
 
 

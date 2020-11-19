@@ -8,11 +8,11 @@ using WebApp.Models;
 
 namespace WebApp.Pages
 {
-    public class PersonaggiModel : PageModel
+    public class ListaPersonaggiModel : PageModel
     {
         private readonly WebApp.Data.WebAppContext _context;
 
-        public PersonaggiModel(WebApp.Data.WebAppContext context)
+        public ListaPersonaggiModel(WebApp.Data.WebAppContext context)
         {
             _context = context;
         }

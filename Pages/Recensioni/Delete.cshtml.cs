@@ -93,8 +93,6 @@ namespace WebApp.Pages.Recensioni
                 Opera.FiveStars -= 1;
             }
 
-            Opera.Voto = (Opera.OneStars + (Opera.TwoStars * 2) + (Opera.ThreeStars * 3) + (Opera.FourStars * 4) + (Opera.FiveStars * 5)) / Opera.NumeroVoti;
-
         }
     }
 }

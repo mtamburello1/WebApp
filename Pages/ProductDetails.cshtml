@@ -12,19 +12,16 @@
             <img src="./img/@Html.DisplayFor(model => model.Opera.FotoOpera)" alt="NOT FOUND" class="image">
         </div>
     </div>
-</div>
-
-<div class="container">
     <div class="row">
         <div class="col-xs-3" id="list">
             <ul id="select">
-                <li><a asp-page="./Trama" asp-route-id="@Request.Query["id"].ToString()"><b>Trama</b></a></li>
-                <li><a asp-page="./Autore" asp-route-id="@Request.Query["id"].ToString()"><b>L'autore</b></a></li>
-                <li><a asp-page="./Contesto" asp-route-id="@Request.Query["id"].ToString()"><b>Contesto</b></a></li>
-                <li><a asp-page="./Personaggi" asp-route-id="@Request.Query["id"].ToString()"><b>Personaggi</b></a></li>
-                <li><a asp-page="./Reviews" asp-route-id="@Request.Query["id"].ToString()"><b>Recensioni</b></a></li>
-                <li><a asp-page="./AggiuntaRecensione" asp-route-id="@Request.Query["id"].ToString()"><b>Lascia un commento</b></a></li>
-                <li><a asp-area="" asp-controller="Home" asp-action="Index"><b>Acquista</b></a></li>
+                <a asp-page="./Trama" asp-route-id="@Request.Query["id"].ToString()"><li><b>Trama</b></li></a>
+                <a asp-page="./Autore" asp-route-id="@Request.Query["id"].ToString()"><li><b>L'autore</b></li></a>
+                <a href="./Trama?id=@Request.Query["id"].ToString()#Contesto"><li><b>Contesto</b></li></a>
+                <a asp-page="./ListaPersonaggi" asp-route-id="@Request.Query["id"].ToString()"><li><b>Personaggi</b></li></a>
+                <a asp-page="./Reviews" asp-route-id="@Request.Query["id"].ToString()"><li><b>Recensioni</b></li></a>
+                <a asp-page="./AggiuntaRecensione" asp-route-id="@Request.Query["id"].ToString()"><li><b>Lascia un commento</b></li></a>
+                <a asp-area="" asp-controller="Home" asp-action="Index"><li><b>Acquista</b></li></a>
             </ul>
         </div>
     </div>

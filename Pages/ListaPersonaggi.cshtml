@@ -1,14 +1,17 @@
-﻿@page "{id:int}"
-@model WebApp.Pages.PersonaggiModel
+﻿@page 
+@model WebApp.Pages.ListaPersonaggiModel
 @{
 }
 
-<link rel="stylesheet" href="~/css/PersonaggiStyle.css" type="text/css" />
+<link rel="stylesheet" href="~/css/ListaPersonaggiStyle.css" type="text/css" />
 
 <div class="container" id="container">
-    @foreach(var personaggio in Model.Opera.Personaggi)
+    <h1><b>I PERSONAGGI</b></h1>
+    <hr />
+    @foreach (var personaggio in Model.Opera.Personaggi)
     {
         <div class="row">
+
             <div class="col-sm-5" id="img">
                 <video src="~/img/VideoPersonaggi/@personaggio.VideoPersonaggio" alt="NOT FOUND"></video>
             </div>
@@ -20,6 +23,7 @@
                 </p>
             </div>
         </div>
+        <hr />
     }
 </div>
     

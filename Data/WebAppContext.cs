@@ -14,6 +14,11 @@ namespace WebApp.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
+
         public DbSet<WebApp.Models.Autore> Autore { get; set; }
 
         public DbSet<WebApp.Models.Opera> Opera { get; set; }

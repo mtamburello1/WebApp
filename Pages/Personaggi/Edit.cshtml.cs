@@ -36,8 +36,10 @@ namespace WebApp.Pages.Personaggi
             if (Personaggio == null)
             {
                 return NotFound();
+
             }
-           ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "OperaId");
+
+           ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "Titolo", Personaggio.Opera.Titolo);
             return Page();
         }
 
@@ -47,6 +49,7 @@ namespace WebApp.Pages.Personaggi
         {
             if (!ModelState.IsValid)
             {
+                ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "Titolo");
                 return Page();
             }
 
