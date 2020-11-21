@@ -1,39 +1,57 @@
-﻿@page
-@model WebApp.Pages.Bianco_e_Nero.IndexModel
+﻿@page 
 @{
 }
-<link rel="stylesheet" href="~/css/BiancoENeroCss/BiancoENeroStyle.css" type="text/css" />
+<link rel="stylesheet" href="~/css/BiancoENeroCss/IndexStyle.css" type="text/css" />
+
 <div class="container" id="container">
     <div class="row" id="row">
-        <a>
-            <div class="col sm-3 col-xs-3" id="col">
-                <img src="~/css/BiancoENeroCss/Storia.png" alt="NOT FOUND" />
-            </div>
-        </a>
-        <a>
-            <div class="col sm-3 col-xs-3" id="col">
-                <img src="~/css/BiancoENeroCss/Grappolo.png" alt="NOT FOUND" />
-            </div>
-        </a>
-        <a>
-            <div class="col sm-3 col-xs-3" id="col">
-                <img src="~/css/BiancoENeroCss/Glass-bottle-wine.png" alt="NOT FOUND" />
-            </div>
-        </a>
-        <a>
-            <div class="col sm-3 col-xs-3" id="col">
-                <img src="~/css/BiancoENeroCss/Studioso.png" alt="NOT FOUND" />
-            </div>
-        </a>
-        <a>
-            <div class="col sm-3 col-xs-3" id="col">
-                <img src="~/css/BiancoENeroCss/Calici.png" alt="NOT FOUND" />
-            </div>
-        </a>
-        <a>
-            <div class="col sm-3 col-xs-3" id="col">
-                <img src="~/css/BiancoENeroCss/Controller.png" alt="NOT FOUND" />
-            </div>
-        </a>
+        <div class="col-lg-4 col-sm-6" id="col">
+            <p id="text">Il vino una lunga storia</p>
+            <p id="image">
+                <a href="#">
+                    <img src="~/BiancoENeroImg/AppuntiDiViticoltura/Storia.png" alt="NOT FOUND" />
+                </a>
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6" id="col">
+            <p id="text">Appunti di viticoltura</p>
+            <p id="image">
+                <a href="./AppuntiDiViticoltura/Index">
+                    <img src="~/BiancoENeroImg/AppuntiDiViticoltura/Grappolo.png" alt="NOT FOUND" />
+                </a>
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6" id="col">
+            <p id="text">I vini del territorio</p>
+            <p id="image">
+                <a href="#">
+                    <img src="~/BiancoENeroImg/AppuntiDiViticoltura/Glass-bottle-wine.png" alt="NOT FOUND" />
+                </a>
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6" id="col">
+            <p id="text">Gli studiosi del vino</p>
+            <p id="image">
+                <a href="#">
+                    <img src="~/BiancoENeroImg/AppuntiDiViticoltura/Studioso.png" alt="NOT FOUND" />
+                </a>
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6" id="col">
+            <p id="text">Bere consapevole</p>
+            <p id="image">
+                <a href="#">
+                    <img src="~/BiancoENeroImg/AppuntiDiViticoltura/Calici.png" alt="NOT FOUND" />
+                </a>
+            </p>
+        </div>
+        <div class="col-lg-4 col-sm-6" id="col">
+            <p id="text">Giocare con il vino</p>
+            <p id="image">
+                <a href="#">
+                    <img src="~/BiancoENeroImg/AppuntiDiViticoltura/Controller.png" alt="NOT FOUND" />
+                </a>
+            </p>
+        </div>
     </div>
 </div>

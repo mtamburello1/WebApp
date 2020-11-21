@@ -37,7 +37,7 @@ nav {
     nav h1 {
         display: inline;
         color: white;
-        font-size: 40px;
+        font-size: 50px;
         max-width: inherit;
         font-family: "Global Serif";
     }
@@ -200,6 +200,23 @@ footer .container {
     nav h1 {
         font-size:35px;
     }
+}
+
+@media screen and (max-width: 371px) {
+
+    .container {
+        padding:0;
+    }
+
+    #menuToggle {
+        padding:10px 30px;
+    }
+
+    nav h1 {
+        font-size: 30px;
+        margin-bottom:10px;
+    }
+
 }
 
 

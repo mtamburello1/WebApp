@@ -1,0 +1,78 @@
+﻿html,body, .container {
+    height:auto;
+    width:100%;
+}
+
+#container {
+    margin: 100px auto 80px auto;
+    padding:0;
+    height:auto;
+    width:100%;
+    min-height: 600px;
+}
+
+#row {
+    width:100%;
+    margin:0;
+}
+
+
+    #row ul {
+        list-style-type: none;
+        width:100%;
+        padding:0;
+    }
+    
+        #row ul a{
+            margin: 30px auto;
+        }
+            #row ul li {
+                background-color: brown;
+                color: white;
+                font-family: "Global Serif";
+                font-size: 28px;
+                width: 45%;
+                float: left;
+                height: 50px;
+                margin: 20px 0px;
+            }
+    
+            #row ul #sx {
+                margin-right:5%;
+            }
+    
+            #row ul #dx {
+                margin-left: 5%;
+            }
+    
+        
+                #row ul li p {
+                    margin-bottom:0;
+                    height:100%;
+                }
+    
+                    #row ul li p b {
+                        vertical-align: middle;
+                    }
+
+@media screen and (max-width:575px) {
+
+#row {
+        width:90%;
+        margin:0 auto;
+    }
+
+    #row ul li {
+        float: none;
+        width:100%;
+    }
+
+    #row ul #sx {
+        margin-right: 0;
+    }
+
+    #row ul #dx {
+        margin-left: 0;
+    }
+
+}

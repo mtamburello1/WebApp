@@ -1,0 +1,118 @@
+﻿html, body{
+    height:auto;
+    width:100%;
+}
+
+#container {
+    height:100%;
+    margin:100px auto;
+    width:100%;
+}
+
+    #container #row {
+        height:100%;
+        width:100%;
+        margin:0;
+    }
+
+        #row #colSx {
+            background-color:brown;
+            color: white;
+            margin: 0;
+            padding:20px;
+            padding-bottom:50px;
+            width: 50%;
+            margin-right:2%;
+            left:0;
+        }
+
+        #row #colDx {
+            background-color: brown;
+            color: white;
+            margin: 0;
+            margin-left:2%;
+            padding: 20px;
+            width: 50%;
+            right:0;
+        }
+
+            #row #colSx h1 {
+                height:15%;
+                margin-bottom:5%;
+            }
+
+            #row #colDx #text {
+                display: table;
+                font-family: "Global Serif";
+                height: 80%;
+                font-size: 20px;
+                text-align: left;
+                vertical-align: middle;
+            }
+
+                #text span {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+
+video {
+    border: 2px solid white;
+    border-radius:40px;
+    width:auto;
+    max-width:100%;
+    height:80%;
+}
+
+@media screen and (min-width: 1200px) {
+    html, body {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    video {
+        border: 2px solid white;
+        border-radius: 40px;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    } 
+}
+
+@media screen and (min-width:576px) and (max-width: 991px) {
+    #row #colSx {
+        height:auto;
+        margin: 20px 0;
+        margin-right: 0;
+    }
+
+    #row #colDx {
+        height: auto;
+        margin: 20px 0;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #row #colSx {
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+        margin-right: 0;
+        padding:10px;
+        padding-bottom: 20px;
+    }
+
+        #row #colSx h1 {
+            font-size:20px;
+        }
+
+    #row #colDx {
+        width:100%;
+        height: auto;
+        margin: 20px 0;
+        margin-left: 0;
+    }
+
+}

@@ -12,7 +12,7 @@
     <div class="row">
         @foreach (var item in Model.Opera)
         {
-                <div class="col-6 col-md-3" id="product">
+                <div class="col-6 col-md-6 col-lg-3" id="product">
                    
                          <a asp-page="./ProductDetails" asp-route-id="@item.OperaId" id="button" title="Visualizza la scheda prodotto"><img src="/img/@Html.DisplayFor(modelItem => item.FotoOpera)" alt="NOT FOUND" class="image"></a>
                   
