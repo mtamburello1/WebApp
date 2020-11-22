@@ -15,31 +15,39 @@
         margin:0;
     }
 
-        #row #colSx {
-            background-color:brown;
-            color: white;
-            margin: 0;
-            padding:20px;
-            padding-bottom:50px;
-            width: 50%;
-            margin-right:2%;
-            left:0;
-        }
+            #row #colSx {
+                background-color: brown;
+                color: white;
+                margin: 0;
+                padding: 20px;
+                padding-bottom: 50px;
+                width: 50%;
+                margin-right: 2%;
+                left: 0;
+            }
 
-        #row #colDx {
-            background-color: brown;
-            color: white;
-            margin: 0;
-            margin-left:2%;
-            padding: 20px;
-            width: 50%;
-            right:0;
-        }
 
             #row #colSx h1 {
-                height:15%;
-                margin-bottom:5%;
+                height: 15%;
+                margin-bottom: 5%;
             }
+
+            #row #colDx {
+                background-color: brown;
+                color: white;
+                margin: 0;
+                margin-left: 2%;
+                padding: 20px;
+                padding-bottom: 50px;
+                width: 50%;
+                right: 0;
+            }
+
+            
+            #row #colDx #hidden {
+                display:none;
+            }
+
 
             #row #colDx #text {
                 display: table;
@@ -63,21 +71,55 @@ video {
     height:80%;
 }
 
+#button {
+    right:20px;
+    bottom:20px;
+    position:absolute;
+}
+
+    #button b {
+        vertical-align:middle;
+        font-size:24px;
+    }
+
+    #button #left,#button #right {
+        border:none;
+        color: brown;
+        font-size:20px;
+        background-color: white;
+        width:35px;
+        height:35px;
+        padding:1px 4px;
+    }
+
 @media screen and (min-width: 1200px) {
-    html, body {
-        height: 100%;
-        width: 100%;
+
+    #row #colSx, #row #colDx {
+        min-height: 1000px;
+    }
+
+
+    #row #colSx h1 {
+        height: 10%;
+        margin-bottom: 5%;
+        font-size: 50px;
+        margin-left:10px;
     }
 }
 
 @media screen and (max-width: 1200px) {
+    
+    
+    
     video {
         border: 2px solid white;
         border-radius: 40px;
         width: 100%;
-        max-width: 100%;
         height: auto;
+        max-height:80%;
     } 
+
+
 }
 
 @media screen and (min-width:576px) and (max-width: 991px) {
@@ -105,7 +147,7 @@ video {
     }
 
         #row #colSx h1 {
-            font-size:20px;
+            font-size:25px;
         }
 
     #row #colDx {
