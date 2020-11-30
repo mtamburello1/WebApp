@@ -7,7 +7,7 @@
 
 <h1>Create</h1>
 
-<h4>Personaggio</h4>
+<h2>Personaggio</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Personaggio.VideoPersonaggio" class="control-label"></label>
-                <input asp-for="Personaggio.VideoPersonaggio" class="form-control" />
+                <input asp-for="Personaggio.VideoPersonaggio" class="form-control" type="file" accept="video/mp4"/>
                 <span asp-validation-for="Personaggio.VideoPersonaggio" class="text-danger"></span>
             </div>
             <div class="form-group">

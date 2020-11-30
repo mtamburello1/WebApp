@@ -1,0 +1,62 @@
+﻿body {
+    background-color: white;
+    color: black;
+}
+
+.container {
+    margin: 0 auto;
+    width:100%;
+}
+
+/*Index*/
+h1 {
+    font-size: 35px;
+    margin-bottom: 50px;
+}
+
+a {
+    font-size: 20px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+thead {
+    font-size: 25px;
+}
+
+tbody {
+    font-size: 20px;
+}
+
+td, th {
+    border: 2px solid black;
+    text-align: left;
+    padding: 5px;
+}
+
+/*Create*/
+.row {
+    margin-top:20px;
+}
+
+label {
+    font-size:20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/*Details*/
+dl{
+    border: 2px solid black;
+}
+
+dt {
+    border-top: 1px solid black;
+}
+
+/*Edit*/
+input, select {
+    font-size: 16px;
+}

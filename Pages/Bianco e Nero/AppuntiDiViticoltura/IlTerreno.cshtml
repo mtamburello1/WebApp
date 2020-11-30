@@ -1,0 +1,62 @@
+﻿@page
+@{
+}
+<link rel="stylesheet" href="~/css/BiancoENeroCss/RaccoltaStyle.css" type="text/css" />
+
+<div class="container" id="container">
+    <div class="row" id="row">
+        <div class="col-lg-7 col-sm-12 col-xs-12" id="colSx">
+            <h1>Il Terreno</h1>
+            <video src="~/BiancoENeroImg/AppuntiDiViticoltura/Video/Raccolta.mp4" alt="NOT FOUND" />
+        </div>
+        <div class="col-lg-4 col-sm-12 col-xs-12" id="colDx">
+            <p id="text">
+                <span id="par1">
+                    Non tutti i tipi di terreno e di suolo sono adatti alla coltivazione della vite, 
+                    e tipi diversi di vite richiedono terreni con caratteristiche diverse. 
+                    Il terreno è un fattore fondamentale in quanto riserva d’acqua e di sali minerali necessari alla vita della pianta. 
+                    La vite non richiede terreni fertili, ma quelli più poveri. 
+                    Lo stesso vitigno dà uve con caratteristiche diverse se coltivato in terreni dalle caratteristiche differenti. 
+                    Le radici delle viti assorbono le sostanze nutrizionali che influenzano il carattere del vino dallo strato di terreno coltivabile posto al di sopra del suolo sottostante, 
+                    le cui caratteristiche sono date dalla conformazione geologica della zona.
+                </span>
+                <span id="par2" style="display:none;">
+                    Le caratteristiche del terreno più importanti per la coltivazione della vite riguardano il drenaggio,
+                    che permette alla pianta di non rimanere troppo tempo a contatto con l’acqua e i sali minerali in essa contenuti.
+                    Pertanto per definire il terreno si fa riferimento a due caratteristiche principali: la tessitura e la composizione chimica.
+                </span>
+                <span id="par3" style="display:none;">
+                    Terreni calcareo-marnosi
+                    Sono terreni composti da calcare contenente una certa quantità di argilla, la marna essendo costituita da calcare ed argilla in pari quantità. Questi terreni donano al vino colori compatti e profondi, profumi intensi e variegati, buona struttura, ricchezza di alcol e bassa acidità, qualità fine e longevità.
+                    <br />
+                    Terreni calcareo-arenacei
+                    Questi terreni sono composti da calcare contenente sabbia in discreta percentuale. I vini provenienti da viti coltivate su questo tipo di terreni sono molto equilibrati nelle componenti alcoliche e fenoliche, hanno profumi fini ma non sempre sono predisposti a lunghissimi invecchiamenti.
+                    <br />
+                    Terreni calcareo-argillosi
+                    Sono diffusi nella maggior parte delle nostre regioni e danno vini di grande qualità.
+                    <br />
+                    Terreni marnoso-ferruginosi
+                    Detti anche “terre rosse“, danno vini di ottima qualità.
+                    <br />
+                    Terreni argillosi
+                    I terreni con relativamente alto contenuto in argille sono più idonei alla coltivazione di uve a bacca nera. I vini tenderanno ad avere pigmentazioni molto intense, sensazioni olfattive complesse, ricchezza in alcol, morbidezza, longevità.
+                    <br />
+                    Terreni sabbiosi
+                    La presenza di grande quantità di sabbia nel terreno favorisce il dilavamento delle sostanze disciolte nel terreno pertanto i vini tenderanno ad avere poco colore, struttura leggera, buona acidità, bassa longevità.
+                </span>
+
+            </p>
+            <span id="button">
+                <span id="hidden" value="1"></span>
+                <button type="button" class="rounded-circle" id="left" disabled>
+                    <b> < </b>
+                </button>
+                <button type="button" class="rounded-circle" id="right">
+                    <b> > </b>
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.0.min.js" type="text/javascript"></script>
+<script src="~/js/BiancoENeroJs/ChangePage.js"></script>

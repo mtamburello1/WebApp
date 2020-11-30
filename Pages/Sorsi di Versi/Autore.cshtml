@@ -9,7 +9,15 @@
     <hr />
     <div class="row">
         <div class="col-sm" id="img">
-            <img src="/img/Autori/@Html.DisplayFor(model => model.Opera.Autore.FotoAutore)" alt="NOT FOUND">
+            <img src="~/img/Autori/@Html.DisplayFor(model => model.Opera.Autore.FotoAutore)" alt="NOT FOUND">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm" id="img">
+            <video controls>
+                <source src="~/img/VideoAutori/@Html.DisplayFor(model => model.Opera.Autore.VideoAutore)"> 
+                Spiacenti, il video non è al momento disponibile.
+            </video>
         </div>
     </div>
     <div class="row">

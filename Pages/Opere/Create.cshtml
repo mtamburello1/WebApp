@@ -7,7 +7,7 @@
 
 <h1>Create</h1>
 
-<h4>Opera</h4>
+<h2>Opera</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -39,12 +39,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Opera.VideoOpera" class="control-label"></label>
-                <input asp-for="Opera.VideoOpera" class="form-control" />
+                <input asp-for="Opera.VideoOpera" class="form-control" type="file" accept="video/mp4"/>
                 <span asp-validation-for="Opera.VideoOpera" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Opera.FotoOpera" class="control-label"></label>
-                <input asp-for="Opera.FotoOpera" class="form-control" />
+                <input asp-for="Opera.FotoOpera" class="form-control" type="file" accept="image/png, image/jpeg"/>
                 <span asp-validation-for="Opera.FotoOpera" class="text-danger"></span>
             </div>
             <div class="form-group">

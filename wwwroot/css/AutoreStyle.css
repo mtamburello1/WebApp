@@ -46,6 +46,12 @@ div #img {
         border-radius:40px;
     }
 
+    div #img video {
+        border-radius: 40px;
+        height:auto;
+        width:100%;
+    }
+
 div #col {
     width: 85%;
     margin: 20px auto;

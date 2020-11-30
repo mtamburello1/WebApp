@@ -26,6 +26,7 @@
         #row ul a{
             margin: 30px auto;
         }
+
             #row ul li {
                 background-color: brown;
                 color: white;
@@ -35,6 +36,11 @@
                 float: left;
                 height: 50px;
                 margin: 20px 0px;
+            }
+
+            #row ul li:hover {
+                color: brown;
+                background-color: white;
             }
     
             #row ul #sx {

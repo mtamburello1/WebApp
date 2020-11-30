@@ -10,7 +10,10 @@
     <hr />
     <div class="row" id="video">
         <div class="col-sm" id="img">
-            <video src="~/img/VideoAutori/@Html.DisplayFor(model => model.Opera.VideoOpera)" alt="NOT FOUND"></video>
+            <video controls>
+                <source src="~/img/VideoAutori/@Html.DisplayFor(model => model.Opera.VideoOpera)">
+                Spiacenti, il video non è al momento disponibile.
+            </video>
         </div>
     </div>
     <div class="row" id="text">

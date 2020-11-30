@@ -21,7 +21,7 @@ namespace WebApp.Pages.Personaggi
 
         public IActionResult OnGet()
         {
-        ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "Titolo");
+            ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "Titolo");
             return Page();
         }
 
@@ -34,6 +34,7 @@ namespace WebApp.Pages.Personaggi
         {
             if (!ModelState.IsValid)
             {
+                ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "Titolo");
                 return Page();
             }
 

@@ -21,7 +21,7 @@ namespace WebApp.Pages.Recensioni
 
         public IActionResult OnGet()
         {
-        ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "Titolo");
+            ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "Titolo");
             return Page();
         }
 
@@ -34,6 +34,7 @@ namespace WebApp.Pages.Recensioni
         {
             if (!ModelState.IsValid)
             {
+                ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "Titolo");
                 return Page();
             }
 

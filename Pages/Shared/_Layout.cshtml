@@ -30,13 +30,17 @@
                     <a onclick="changeTextSize(+2)"><li>Ingrandisci testo</li></a>
                     <a onclick="changeTextSize(-2)"><li>Diminuisci testo</li></a>
                     <a href="/Index"><li>Torna ai titoli</li></a>
-                    @if (Context.Request.Query["id"].ToString() != null && !(Context.Request.Query["id"].ToString().Equals("")) )
+                    @if (Context.Request.Query["id"].ToString() != null && !(Context.Request.Query["id"].ToString().Equals("")))
                     {
                         <a asp-page="./ProductDetails" asp-route-id="@Context.Request.Query["id"].ToString()"><li>Torna al menù dell'opera</li></a>
+                        <a asp-page="./AggiuntaRecensione" asp-route-id="@Context.Request.Query["id"].ToString()"><li>Lascia un commento</li></a>
+                    }
+                    else
+                    {
+                        <a asp-page="\Sorsi di Versi\AggiuntaRecensione" asp-route-id="@Context.Request.Query["id"].ToString()"><li>Lascia un commento</li></a>
                     }
                     <a href="#"><li>Lascia uno sticker</li></a>
-                    <a asp-page="./AggiuntaRecensione" asp-route-id="@Context.Request.Query["id"].ToString()"><li>Lascia un commento</li></a>
-                    <a href="#"><li>Acquista</li> </a>                                                            
+                    <a href="#"><li>Acquista</li> </a>
                 </ul>
 
                 <div class="container">
@@ -70,7 +74,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
 

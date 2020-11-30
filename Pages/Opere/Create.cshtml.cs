@@ -34,6 +34,7 @@ namespace WebApp.Pages.Opere
         {
             if (!ModelState.IsValid)
             {
+                ViewData["AutoreId"] = new SelectList(_context.Autore, "AutoreId", "NomeAutore");
                 return Page();
             }
 

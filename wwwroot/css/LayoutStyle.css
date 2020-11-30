@@ -43,7 +43,7 @@ nav {
     }
 
     nav .container {
-        width:100%;
+        width:80%;
         max-width:none !important;
     }
 
@@ -197,6 +197,14 @@ footer .container {
         width: 100%;
     }
 
+    #menuToggle {
+        padding: 10px 20px;
+    }
+
+        #menuToggle input {
+            left: 15px;
+        }
+
     nav h1 {
         font-size:35px;
     }
@@ -209,11 +217,11 @@ footer .container {
     }
 
     #menuToggle {
-        padding:10px 30px;
+        padding:10px 20px;
     }
 
     nav h1 {
-        font-size: 30px;
+        font-size: 25px;
         margin-bottom:10px;
     }
 
