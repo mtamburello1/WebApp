@@ -51,6 +51,7 @@ namespace WebApp.Pages.Personaggi
         {
             if (!ModelState.IsValid)
             {
+                ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "Titolo");
                 return Page();
             }
 

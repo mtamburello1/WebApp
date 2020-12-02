@@ -42,8 +42,19 @@ namespace WebApp.Pages.Opere
             }
            ViewData["AutoreId"] = new SelectList(_context.Autore, "AutoreId", "NomeAutore");
 
-            HttpContext.Session.SetString("videoCorrente", this.Opera.VideoOpera);
-            HttpContext.Session.SetString("fotoCorrente", this.Opera.FotoOpera);
+            if (this.Opera.FotoOpera != null)
+            {
+                HttpContext.Session.SetString("fotoCorrente", this.Opera.FotoOpera);
+            }
+
+            if (this.Opera.VideoOpera != null)
+            {
+
+                HttpContext.Session.SetString("videoCorrente", this.Opera.VideoOpera);
+            }
+
+
+
             return Page();
         }
 
@@ -53,6 +64,7 @@ namespace WebApp.Pages.Opere
         {
             if (!ModelState.IsValid)
             {
+                ViewData["AutoreId"] = new SelectList(_context.Autore, "AutoreId", "NomeAutore");
                 return Page();
             }
 
@@ -85,6 +97,13 @@ namespace WebApp.Pages.Opere
                         fotoOpera.CopyTo(fs);
                         fs.Flush();
                     }
+
+                    if (HttpContext.Session.GetString("fotoCorrente") != null)
+                    {
+                        System.IO.File.Delete("wwwroot/img/" + HttpContext.Session.GetString("fotoCorrente"));
+                    }
+
+
                 }
             }
 
@@ -115,6 +134,13 @@ namespace WebApp.Pages.Opere
                         videoOpera.CopyTo(fs);
                         fs.Flush();
                     }
+
+
+                    if (HttpContext.Session.GetString("videoCorrente") != null)
+                    {
+                        System.IO.File.Delete("wwwroot/img/VideoOpere/" + HttpContext.Session.GetString("videoCorrente"));
+                    }
+
                 }
             }
 
