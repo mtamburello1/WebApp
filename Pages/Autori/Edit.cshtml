@@ -11,17 +11,17 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Autore.AutoreId" />
             <div class="form-group">
                 <label asp-for="Autore.FotoAutore" class="control-label"></label>
-                <input asp-for="Autore.FotoAutore" class="form-control"/>
+                <input asp-for="Autore.FotoAutore" class="form-control" type="file" accept="image/png, image/jpeg"  name="fotoAutore"/>
                 <span asp-validation-for="Autore.FotoAutore" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Autore.VideoAutore" class="control-label"></label>
-                <input asp-for="Autore.VideoAutore" class="form-control"/>
+                <input asp-for="Autore.VideoAutore" class="form-control" type="file" accept="video/mp4" name="videoAutore"/>
                 <span asp-validation-for="Autore.VideoAutore" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -35,7 +35,7 @@
                 <span asp-validation-for="Autore.NomeAutore" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" asp-page-handler="Upload" />
             </div>
         </form>
     </div>

@@ -30,9 +30,9 @@ namespace WebApp
             services.AddDbContext<WebAppContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-
-
-
+            services.AddMvc()
+        .AddSessionStateTempDataProvider();
+            services.AddSession();
 
         }
 
@@ -57,6 +57,8 @@ namespace WebApp
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebApp.Data;
 using WebApp.Models;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using Microsoft.Extensions.FileProviders;
 
 namespace WebApp.Pages.Autori
 {
@@ -36,19 +39,93 @@ namespace WebApp.Pages.Autori
             {
                 return NotFound();
             }
+
+            HttpContext.Session.SetString("videoCorrente", this.Autore.VideoAutore);
+            HttpContext.Session.SetString("fotoCorrente", this.Autore.FotoAutore);
             return Page();
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostUploadAsync(IFormFile fotoAutore, IFormFile videoAutore) 
         {
+
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
             _context.Attach(Autore).State = EntityState.Modified;
+
+            if (fotoAutore != null)
+            {
+                if (fotoAutore.Length > 0)
+                {
+                    //Prende il nome del file
+                    var fileName = Path.GetFileName(fotoAutore.FileName);
+
+                    //Assegna un nome univoco per il file
+                    var myUniqueFileName = Convert.ToString(Guid.NewGuid());
+
+                    //Prende l'estensione del file
+                    var fileExtension = Path.GetExtension(fileName);
+
+                    // Concatena file e estensione
+                    var newFileName = String.Concat(myUniqueFileName, fileExtension);
+
+                    // Combina il file col path
+                    var filepath = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "Autori")).Root + $@"\{newFileName}";
+
+                    // Crea il path da salvare nel DB
+                    this.Autore.FotoAutore = newFileName;
+
+                    using (FileStream fs = System.IO.File.Create(filepath))
+                    {
+                        fotoAutore.CopyTo(fs);
+                        fs.Flush();
+                    }
+                }
+            }
+
+            if (videoAutore != null)
+            {
+                if (videoAutore.Length > 0)
+                {
+                    //Prende il nome del file
+                    var fileName = Path.GetFileName(videoAutore.FileName);
+
+                    //Assegna un nome univoco per il file
+                    var myUniqueFileName = Convert.ToString(Guid.NewGuid());
+
+                    //Prende l'estensione del file
+                    var fileExtension = Path.GetExtension(fileName);
+
+                    // Concatena file e estensione
+                    var newFileName = String.Concat(myUniqueFileName, fileExtension);
+
+                    // Combina il file col path
+                    var filepath = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "img", "VideoAutori")).Root + $@"\{newFileName}";
+
+                    // Crea il path da salvare nel DB
+                    this.Autore.VideoAutore = newFileName;
+
+                    using (FileStream fs = System.IO.File.Create(filepath))
+                    {
+                        videoAutore.CopyTo(fs);
+                        fs.Flush();
+                    }
+                }
+            }
+
+
+            if (this.Autore.VideoAutore == null) {
+                this.Autore.VideoAutore = HttpContext.Session.GetString("videoCorrente");
+            }
+
+            if (this.Autore.FotoAutore == null)
+            {
+                this.Autore.FotoAutore = HttpContext.Session.GetString("fotoCorrente");
+            }
 
             try
             {

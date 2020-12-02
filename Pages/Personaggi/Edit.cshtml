@@ -11,7 +11,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Personaggio.PersonaggioId" />
             <div class="form-group">
@@ -31,11 +31,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="Personaggio.VideoPersonaggio" class="control-label"></label>
-                <input asp-for="Personaggio.VideoPersonaggio" class="form-control" />
+                <input asp-for="Personaggio.VideoPersonaggio" class="form-control"  type="file" accept="video/mp4"  name="videoPersonaggio" />
                 <span asp-validation-for="Personaggio.VideoPersonaggio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" asp-page-handler="Upload"/>
             </div>
         </form>
     </div>
