@@ -21,38 +21,14 @@
         <div class="col-sm-2" id="colDx">
             <div class="row" id="rowList">
                 <ul>
+                    @foreach(var item in Model.Vini)
+                    { 
                     <li class="col-lg-12 col-sm">
-                        <button id="">Il terreno</button>
+                        <form>
+                            <button>@item.NomeVino</button>
+                        </form>
                     </li>
-                    
-                    <li class="col-lg-12 col-sm">
-                        <button id="">Impianto</button>
-                    </li>
-                    
-                    <li class="col-lg-12 col-sm">
-                        <button id="">Potatura</button>
-                    </li>
-                    
-                    <li class="col-lg-12 col-sm">
-                        <button id="">Concimazione</button>
-                    </li>
-                    
-                    <li class="col-lg-12 col-sm">
-                        <button id="">Irrigazione</button>
-                    </li>
-                    
-                    <li class="col-lg-12 col-sm">
-                        <button id="">Avversità</button>
-                    </li>
-                    
-                    <li class="col-lg-12 col-sm">
-                        <button id="">Raccolta</button>
-                    </li>
-                    
-                    <li class="col-lg-12 col-sm">
-                        <button id="">Vendemmia</button>
-                    </li>
-                    
+                    }
                 </ul>
             </div>
         </div>

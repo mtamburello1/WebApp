@@ -14,7 +14,7 @@ namespace WebApp.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .HasAnnotation("ProductVersion", "3.1.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -40,6 +40,65 @@ namespace WebApp.Migrations
                     b.HasKey("AutoreId");
 
                     b.ToTable("Autore");
+                });
+
+            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Provenienza", b =>
+                {
+                    b.Property<long>("ProvenienzaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("NomeVino")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("NomeZona")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("VinoNomeVino")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ZonaNomeZona")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ProvenienzaId");
+
+                    b.HasIndex("VinoNomeVino");
+
+                    b.HasIndex("ZonaNomeZona");
+
+                    b.ToTable("Provenienza");
+                });
+
+            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Vino", b =>
+                {
+                    b.Property<string>("NomeVino")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("DescrizioneVino")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TipoVino")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Zone_ProvenienzaNomeZona")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("NomeVino");
+
+                    b.HasIndex("Zone_ProvenienzaNomeZona");
+
+                    b.ToTable("Vino");
+                });
+
+            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Zone_Provenienza", b =>
+                {
+                    b.Property<string>("NomeZona")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("NomeZona");
+
+                    b.ToTable("Zone_Provenienza");
                 });
 
             modelBuilder.Entity("WebApp.Models.Opera", b =>
@@ -155,6 +214,24 @@ namespace WebApp.Migrations
                     b.HasIndex("OperaId");
 
                     b.ToTable("Recensione");
+                });
+
+            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Provenienza", b =>
+                {
+                    b.HasOne("WebApp.Models.Entities.BiancoENero.Vino", "Vino")
+                        .WithMany("Provenienze")
+                        .HasForeignKey("VinoNomeVino");
+
+                    b.HasOne("WebApp.Models.Entities.BiancoENero.Zone_Provenienza", "Zona")
+                        .WithMany()
+                        .HasForeignKey("ZonaNomeZona");
+                });
+
+            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Vino", b =>
+                {
+                    b.HasOne("WebApp.Models.Entities.BiancoENero.Zone_Provenienza", null)
+                        .WithMany("Vini")
+                        .HasForeignKey("Zone_ProvenienzaNomeZona");
                 });
 
             modelBuilder.Entity("WebApp.Models.Opera", b =>
