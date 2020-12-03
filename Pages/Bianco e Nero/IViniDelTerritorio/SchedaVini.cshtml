@@ -8,8 +8,27 @@
     <div class="row" id="row">
         <div class="col-sm-8" id="colSx">
             <img src="~/BiancoENeroImg/IViniDelTerritorio/Puglia.png" id="cartina"/>
-            <p id="text">ciao</p>
-            @if (ViewData["tipo"].Equals("rosso"))
+            <div id="text" style="display:none;">
+                <p id="par1">
+                    @ViewData["Storia"]
+                </p>
+                <p id="par2" style="display:none;">
+                    @ViewData["Caratteristiche"]
+                </p>
+                <p id="par3" style="display:none;">
+                    par3
+                </p>
+                <span id="button">
+                    <span id="hidden" value="1"></span>
+                    <button type="button" class="rounded-circle" id="left" disabled>
+                        <b> < </b>
+                    </button>
+                    <button type="button" class="rounded-circle" id="right">
+                        <b> > </b>
+                    </button>
+                </span>
+            </div>
+            @if (Request.Query["id"].ToString().Equals("rosso"))
             {
                 <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboRosso.png" id="imageBimbo"/>
             }
@@ -18,19 +37,23 @@
                 <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboBiondo.png" id="imageBimbo"/>
             }
         </div>
-        <div class="col-sm-2" id="colDx">
+        <div class="col-sm-4" id="colDx">
             <div class="row" id="rowList">
                 <ul>
-                    @foreach(var item in Model.Vini)
+                    @foreach(var item in ViewBag.Vini)
                     { 
-                    <li class="col-lg-12 col-sm">
-                        <form>
-                            <button>@item.NomeVino</button>
-                        </form>
-                    </li>
+                        <li class="col-lg-12 col-sm">
+                            <form method="post" name="Get_Wines" asp-page-handler="Wines">
+                                <input type="hidden" asp-for="Vino.NomeVino" value="Vino.NomeVino"/>
+                                <button type="button" onclick="javascript:runClick();" id="btn">@item</button>
+                            </form>
+                        </li>
                     }
                 </ul>
             </div>
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.4.0.min.js" type="text/javascript"></script>
+<script src="~/js/BiancoENeroJs/IViniDelTerritorio.js"></script>
+<script src="~/js/BiancoENeroJs/ChangePage.js"></script>

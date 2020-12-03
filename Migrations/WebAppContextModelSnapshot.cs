@@ -49,11 +49,11 @@ namespace WebApp.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long>("NomeVino")
-                        .HasColumnType("bigint");
+                    b.Property<string>("NomeVino")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("NomeZona")
-                        .HasColumnType("bigint");
+                    b.Property<string>("NomeZona")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("VinoNomeVino")
                         .HasColumnType("nvarchar(450)");
@@ -75,30 +75,33 @@ namespace WebApp.Migrations
                     b.Property<string>("NomeVino")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("DescrizioneVino")
+                    b.Property<string>("CaratteristicheVino")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StoriaVino")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TipoVino")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Zone_ProvenienzaNomeZona")
+                    b.Property<string>("ZonaNomeZona")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("NomeVino");
 
-                    b.HasIndex("Zone_ProvenienzaNomeZona");
+                    b.HasIndex("ZonaNomeZona");
 
                     b.ToTable("Vino");
                 });
 
-            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Zone_Provenienza", b =>
+            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Zona", b =>
                 {
                     b.Property<string>("NomeZona")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("NomeZona");
 
-                    b.ToTable("Zone_Provenienza");
+                    b.ToTable("Zona");
                 });
 
             modelBuilder.Entity("WebApp.Models.Opera", b =>
@@ -222,16 +225,16 @@ namespace WebApp.Migrations
                         .WithMany("Provenienze")
                         .HasForeignKey("VinoNomeVino");
 
-                    b.HasOne("WebApp.Models.Entities.BiancoENero.Zone_Provenienza", "Zona")
+                    b.HasOne("WebApp.Models.Entities.BiancoENero.Zona", "Zona")
                         .WithMany()
                         .HasForeignKey("ZonaNomeZona");
                 });
 
             modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Vino", b =>
                 {
-                    b.HasOne("WebApp.Models.Entities.BiancoENero.Zone_Provenienza", null)
+                    b.HasOne("WebApp.Models.Entities.BiancoENero.Zona", null)
                         .WithMany("Vini")
-                        .HasForeignKey("Zone_ProvenienzaNomeZona");
+                        .HasForeignKey("ZonaNomeZona");
                 });
 
             modelBuilder.Entity("WebApp.Models.Opera", b =>

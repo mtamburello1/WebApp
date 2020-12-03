@@ -15,13 +15,13 @@ namespace WebApp.Models.Entities.BiancoENero
 
         [Display(Name = "Zona")]
         [ForeignKey("NomeZona")]
-        public long NomeZona { get; set; }
+        public string NomeZona { get; set; }
 
         [Display(Name = "Vino")]
         [ForeignKey("NomeVino")]
-        public long NomeVino { get; set; }
+        public string NomeVino { get; set; }
 
         public virtual Vino Vino { get; set; }
-        public virtual Zone_Provenienza Zona { get; set; }
+        public virtual Zona Zona { get; set; }
     }
 }

@@ -18,6 +18,7 @@ body, .container {
 
 #row, #colSx, #colDx {
     padding: 0;
+    margin:0;
 }
 
     #colSx #cartina{
@@ -29,22 +30,22 @@ body, .container {
     #colSx #text {
         font-size: 18px;
         color: white;
-        background-color: rgba(255,255,255, 0.7);
+        background-color: rgba(156,156,156, 0.8);
         position: absolute;
         top:0;
         left:50%;
         width:40%;
+        min-height:30%;
         padding: 15px;
     }
     
     #colSx #imageBimbo {
-        width:14%;
-        height:25%;
+        width:180px;
         border-radius: 50%;
         border: 5px solid brown;
         position: absolute;
-        bottom:0px;
-        left:50px;
+        bottom:50px;
+        left:100px;
     }
 
 #colDx #rowList {
@@ -70,6 +71,12 @@ body, .container {
             padding:0;
         }
 
+        #colDx ul form {
+            height:100%;
+            width:100%;
+        }
+            
+
             #colDx ul li button {
                 height: 100%;
                 color: white;
@@ -77,6 +84,7 @@ body, .container {
                 background-color: brown;
                 border: 0;
                 font-weight: bold;
+                padding: 5px;
             }
 
             #colDx ul li button:active, #colDx ul li button:hover,#colDx ul li button:focus {
@@ -84,5 +92,24 @@ body, .container {
                 color: brown;
             }
 
+#button {
+    right: 20px;
+    bottom: 20px;
+    position: absolute;
+}
 
+    #button b {
+        vertical-align: middle;
+        font-size: 24px;
+    }
+
+    #button #left, #button #right {
+        border: none;
+        color: brown;
+        font-size: 20px;
+        background-color: white;
+        width: 35px;
+        height: 35px;
+        padding: 1px 4px;
+    }
 

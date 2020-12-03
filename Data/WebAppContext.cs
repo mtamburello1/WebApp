@@ -30,7 +30,7 @@ namespace WebApp.Data
 
         public DbSet<WebApp.Models.Entities.BiancoENero.Vino> Vino { get; set; }
 
-        public DbSet<WebApp.Models.Entities.BiancoENero.Zone_Provenienza> Zone_Provenienza { get; set; }
+        public DbSet<WebApp.Models.Entities.BiancoENero.Zona> Zona { get; set; }
 
         public DbSet<WebApp.Models.Entities.BiancoENero.Provenienza> Provenienza { get; set; }
     }
