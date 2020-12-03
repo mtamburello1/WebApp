@@ -1,0 +1,115 @@
+﻿html {
+    height:auto;
+}
+body, .container {
+    height:100%;
+}
+
+#container {
+    height:100%;
+    width:90%;
+    margin:80px;
+    padding:0;
+}
+
+#row {
+    width:100%;
+}
+
+#row, #colSx, #colDx {
+    padding: 0;
+    margin:0;
+}
+
+    #colSx #cartina{
+        width:60%;
+        height:auto;
+        z-index:1;
+    }
+
+    #colSx #text {
+        font-size: 18px;
+        color: white;
+        background-color: rgba(156,156,156, 0.8);
+        position: absolute;
+        top:0;
+        left:50%;
+        width:40%;
+        min-height:30%;
+        padding: 15px;
+    }
+    
+    #colSx #imageBimbo {
+        width:180px;
+        border-radius: 50%;
+        border: 5px solid brown;
+        position: absolute;
+        bottom:50px;
+        left:100px;
+    }
+
+#colDx #rowList {
+    height:100%;
+    width:100%;
+    margin:0;
+}
+
+    #colDx ul{
+        list-style-type:none;
+        padding:10px;
+        width:100%;
+        height:100%;
+    }
+    
+        #colDx ul li {
+            background-color:brown;
+            font-size:25px;
+            font-family:"Global Serif";
+            height:8%;
+            margin-bottom:10px;
+            text-align: right;
+            padding:0;
+        }
+
+        #colDx ul form {
+            height:100%;
+            width:100%;
+        }
+            
+
+            #colDx ul li button {
+                height: 100%;
+                color: white;
+                width: 100%;
+                background-color: brown;
+                border: 0;
+                font-weight: bold;
+                padding: 5px;
+            }
+
+            #colDx ul li button:active, #colDx ul li button:hover,#colDx ul li button:focus {
+                background-color:white;
+                color: brown;
+            }
+
+#button {
+    right: 20px;
+    bottom: 20px;
+    position: absolute;
+}
+
+    #button b {
+        vertical-align: middle;
+        font-size: 24px;
+    }
+
+    #button #left, #button #right {
+        border: none;
+        color: brown;
+        font-size: 20px;
+        background-color: white;
+        width: 35px;
+        height: 35px;
+        padding: 1px 4px;
+    }
+

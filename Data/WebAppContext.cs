@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebApp.Models;
+using WebApp.Models.Entities.BiancoENero;
 
 namespace WebApp.Data
 {
@@ -26,5 +27,11 @@ namespace WebApp.Data
         public DbSet<WebApp.Models.Personaggio> Personaggio { get; set; }
 
         public DbSet<WebApp.Models.Recensione> Recensione { get; set; }
+
+        public DbSet<WebApp.Models.Entities.BiancoENero.Vino> Vino { get; set; }
+
+        public DbSet<WebApp.Models.Entities.BiancoENero.Zona> Zona { get; set; }
+
+        public DbSet<WebApp.Models.Entities.BiancoENero.Provenienza> Provenienza { get; set; }
     }
 }

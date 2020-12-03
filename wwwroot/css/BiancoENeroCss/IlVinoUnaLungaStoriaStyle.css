@@ -137,7 +137,7 @@ li #imgUp {
     padding: 5px;
     width: 120px;
     height: 120px;
-    background-color: white;
+    background-color: aqua;
     transform: translate(-60%, -210%);
 }
 
@@ -145,17 +145,36 @@ li #imgDown {
     padding: 5px;
     width: 120px;
     height: 120px;
-    background-color: white;
+    background-color: fuchsia;
     transform: translate(-60%, 130%);
 }
 
 li img {
-    height:auto;
+    height:100%;
     width:100%;
 }
 
-@media screen and (max-width: 1200px) {
+#second #imgUp {
+    background-color: deeppink;
+}
 
+#third #imgDown{
+    background-color: orange;
+}
+
+#fourth #imgUp {
+    background-color: hotpink;
+}
+
+#fifth #imgDown {
+    background-color: deepskyblue;
+}
+
+li:last-child #imgUp {
+    background-color: aqua;
+}
+
+@media screen and (max-width: 1200px) {
     .timeline ol li:first-child {
         width: 14.3%;
     }

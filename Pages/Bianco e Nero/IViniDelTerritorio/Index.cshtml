@@ -1,4 +1,7 @@
 ﻿@page
+@{ 
+    ViewData["Title"] = "I vini del territorio";
+}
 <link rel="stylesheet" href="~/css/BiancoENeroCss/IViniDelTerritorioStyle.css" type="text/css" />
 
 <div class="container" id="container">
@@ -7,10 +10,10 @@
             <h1>
                 <b>SELEZIONA UN BAMVINO</b>
             </h1>
-            <a href="#">
+            <a asp-page="./SchedaVini" asp-route-id="rosso">
                 <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboRosso.png" id="rosso" />
             </a>
-            <a href="#">
+            <a asp-page="./SchedaVini" asp-route-id="bianco">
                 <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboBiondo.png" id="biondo"/>
             </a>
         </div>

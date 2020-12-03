@@ -1,0 +1,46 @@
+﻿@page
+@model WebApp.Pages.Vini.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h2>Vino</h2>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vino.NomeVino)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vino.NomeVino)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vino.StoriaVino)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vino.StoriaVino)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vino.CaratteristicheVino)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vino.CaratteristicheVino)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Vino.TipoVino)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Vino.TipoVino)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Vino.NomeVino" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
