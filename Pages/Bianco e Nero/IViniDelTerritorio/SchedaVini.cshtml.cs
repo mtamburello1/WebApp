@@ -20,7 +20,7 @@ namespace WebApp.Pages.Bianco_e_Nero.IViniDelTerritorio
 
         public IList<String> ListaVini { get; set; }
         public Vino Vino { get; set; }
-        public IList<Provenienza> Provenienze { get; set; }
+        public IList<ZonaVino> ZoneVini { get; set; }
 
         public async Task OnGet()
         {
@@ -47,7 +47,7 @@ namespace WebApp.Pages.Bianco_e_Nero.IViniDelTerritorio
             ViewData["Storia"] = Vino.StoriaVino;
             ViewData["Caratteristiche"] = Vino.CaratteristicheVino;
 
-            Provenienze = await _context.Provenienza
+            ZoneVini = await _context.ZonaVino
             .Where(p => p.NomeVino.Equals(Vino.NomeVino))
             .AsNoTracking()
             .ToListAsync();

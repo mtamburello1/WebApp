@@ -8,6 +8,10 @@ namespace WebApp.Models.Entities.BiancoENero
 {
     public class Vino
     {
+        public Vino() 
+        {
+            this.ZoneVini = new HashSet<ZonaVino>();
+        }
 
         [Key]
         [Display(Name = "Denominazione")]
@@ -22,6 +26,6 @@ namespace WebApp.Models.Entities.BiancoENero
         [Display(Name = "Tipologia")]
         public string TipoVino { get; set; }
 
-        public virtual ICollection<Provenienza> Provenienze { get; set; }
+        public virtual ICollection<ZonaVino> ZoneVini { get; set; }
     }
 }

@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace WebApp.Models.Entities.BiancoENero
 {
-    public class Zona
+    public class Zona 
     {
+        public Zona()
+        {
+           this.ZoneVini = new HashSet<ZonaVino>();
+        }
+
         [Display(Name = "Zona")]
         [Key]
         public string NomeZona { get; set; }
 
-        public virtual ICollection<Vino> Vini { get; set; }
+        public virtual ICollection<ZonaVino> ZoneVini { get; set; }
     }
 }

@@ -9,8 +9,8 @@ using WebApp.Data;
 namespace WebApp.Migrations
 {
     [DbContext(typeof(WebAppContext))]
-    [Migration("20201202220703_update_entity_Vino")]
-    partial class update_entity_Vino
+    [Migration("20201204112619_add_entities_for_Bianco_e_Nero")]
+    partial class add_entities_for_Bianco_e_Nero
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,42 +44,12 @@ namespace WebApp.Migrations
                     b.ToTable("Autore");
                 });
 
-            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Provenienza", b =>
-                {
-                    b.Property<long>("ProvenienzaId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("NomeZona")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("VinoId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("ZonaNomeZona")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("ProvenienzaId");
-
-                    b.HasIndex("VinoId");
-
-                    b.HasIndex("ZonaNomeZona");
-
-                    b.ToTable("Provenienza");
-                });
-
             modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Vino", b =>
                 {
-                    b.Property<long>("VinoId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("NomeVino")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("CaratteristicheVino")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NomeVino")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StoriaVino")
@@ -88,12 +58,7 @@ namespace WebApp.Migrations
                     b.Property<string>("TipoVino")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ZonaNomeZona")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("VinoId");
-
-                    b.HasIndex("ZonaNomeZona");
+                    b.HasKey("NomeVino");
 
                     b.ToTable("Vino");
                 });
@@ -106,6 +71,21 @@ namespace WebApp.Migrations
                     b.HasKey("NomeZona");
 
                     b.ToTable("Zona");
+                });
+
+            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.ZonaVino", b =>
+                {
+                    b.Property<string>("NomeZona")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("NomeVino")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("NomeZona", "NomeVino");
+
+                    b.HasIndex("NomeVino");
+
+                    b.ToTable("ZonaVino");
                 });
 
             modelBuilder.Entity("WebApp.Models.Opera", b =>
@@ -223,24 +203,19 @@ namespace WebApp.Migrations
                     b.ToTable("Recensione");
                 });
 
-            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Provenienza", b =>
+            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.ZonaVino", b =>
                 {
                     b.HasOne("WebApp.Models.Entities.BiancoENero.Vino", "Vino")
-                        .WithMany("Provenienze")
-                        .HasForeignKey("VinoId")
+                        .WithMany("ZoneVini")
+                        .HasForeignKey("NomeVino")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("WebApp.Models.Entities.BiancoENero.Zona", "Zona")
-                        .WithMany()
-                        .HasForeignKey("ZonaNomeZona");
-                });
-
-            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Vino", b =>
-                {
-                    b.HasOne("WebApp.Models.Entities.BiancoENero.Zona", null)
-                        .WithMany("Vini")
-                        .HasForeignKey("ZonaNomeZona");
+                        .WithMany("ZoneVini")
+                        .HasForeignKey("NomeZona")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("WebApp.Models.Opera", b =>
