@@ -25,9 +25,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Vino[0].TipoVino)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Vino[0].ZoneVini)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -45,9 +42,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TipoVino)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ZoneVini)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.NomeVino">Edit</a> |

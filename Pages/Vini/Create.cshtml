@@ -16,7 +16,7 @@
             <div class="form-group">
                 <label asp-for="Vino.NomeVino" class="control-label"></label>
                 <input asp-for="Vino.NomeVino" class="form-control" />
-                <input type="hidden" asp-for="Provenienza.NomeVino" id="Provenienza_NomeVino" class="form-control" />
+                @*<input type="hidden" asp-for="Provenienza.NomeVino" id="Provenienza_NomeVino" class="form-control" />*@
                 <span asp-validation-for="Vino.NomeVino" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -35,8 +35,9 @@
                 <input type="radio" value="bianco" asp-for="Vino.TipoVino" class="form-control" /> Bianco
             </div>
             <div class="form-group">
-                <label asp-for="Provenienza.NomeZona" class="control-label"></label>
-                <select asp-for="Provenienza.NomeZona" class="form-control" asp-items="ViewBag.Zone"></select>
+                <select asp-for="Zone" asp-items="ViewBag.Zone"></select>
+                @*<label asp-for="Provenienza.NomeZona" class="control-label"></label>
+        <select asp-for="Provenienza.NomeZona" class="form-control" asp-items="ViewBag.Zone"></select>*@
             </div>
             <div class="form-group">
 
