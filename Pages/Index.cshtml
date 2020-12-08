@@ -7,18 +7,20 @@
 
 <div class="container" id="container">
     <div class="titolo">
-        <h1>Scegli un'opera e divertiti</h1>
+        <h1 style="font-size:30px" id="h1Index30">Scegli un'opera e divertiti</h1>
+        <p id="ciao">Scegli un'opera e divertiti</p>
+
     </div>
     <div class="row">
         @foreach (var item in Model.Opera)
         {
-                <div class="col-6 col-md-6 col-lg-3" id="product">
-                   
-                         <a asp-page="./Sorsi di Versi/ProductDetails" asp-route-id="@item.OperaId" id="button" title="Visualizza la scheda prodotto"><img src="/img/@Html.DisplayFor(modelItem => item.FotoOpera)" alt="NOT FOUND" class="image"></a>
-                  
-                </div>
+            <div class="col-6 col-md-6 col-lg-3" id="product">
 
-         }
+                <a asp-page="./Sorsi di Versi/ProductDetails" asp-route-id="@item.OperaId" id="button" title="Visualizza la scheda prodotto"><img src="/img/@Html.DisplayFor(modelItem => item.FotoOpera)" alt="NOT FOUND" class="image"></a>
 
-        </div>
+            </div>
+
+        }
+
+    </div>
 </div>

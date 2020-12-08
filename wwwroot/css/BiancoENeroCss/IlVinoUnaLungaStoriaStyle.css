@@ -60,7 +60,7 @@ body, #container {
         }
 
             .timeline ol #second::before {
-                background-color: deeppink;
+                background-color: #dc3086;
             }
 
         .timeline ol #third {
@@ -68,7 +68,7 @@ body, #container {
         }
 
             .timeline ol #third::before {
-                background-color: orange;
+                background-color: #ee7c2e;
             }
 
                 .timeline ol #third::after {
@@ -80,14 +80,14 @@ body, #container {
         }
 
             .timeline ol #fourth::before {
-                background-color: hotpink;
+                background-color: #ea5074;
             }
         .timeline ol #fifth {
             left: calc(58% + 8px);
         }
 
             .timeline ol #fifth::before {
-                background-color: deepskyblue;
+                background-color: #0091c2;
             }
 
                 .timeline ol #fifth::after {
@@ -103,7 +103,7 @@ body, #container {
         }
 
             .timeline ol li:last-child::before {
-                background-color: aqua;
+                background-color: #00a3b3;
             }
 
             /*Punti colorati*/
@@ -128,7 +128,7 @@ body, #container {
                 left: calc(100% + 4px);
                 bottom: 0;
                 width: 6px;
-                height: 150px;
+                height: 160px;
                 z-index: 0;
                 background-color: white;
             }
@@ -137,7 +137,7 @@ li #imgUp {
     padding: 5px;
     width: 120px;
     height: 120px;
-    background-color: aqua;
+    background-color: none;
     transform: translate(-60%, -210%);
 }
 
@@ -145,7 +145,7 @@ li #imgDown {
     padding: 5px;
     width: 120px;
     height: 120px;
-    background-color: fuchsia;
+    background-color: none;
     transform: translate(-60%, 130%);
 }
 
@@ -154,25 +154,6 @@ li img {
     width:100%;
 }
 
-#second #imgUp {
-    background-color: deeppink;
-}
-
-#third #imgDown{
-    background-color: orange;
-}
-
-#fourth #imgUp {
-    background-color: hotpink;
-}
-
-#fifth #imgDown {
-    background-color: deepskyblue;
-}
-
-li:last-child #imgUp {
-    background-color: aqua;
-}
 
 @media screen and (max-width: 1200px) {
     .timeline ol li:first-child {
