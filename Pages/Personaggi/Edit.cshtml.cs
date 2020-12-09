@@ -43,7 +43,11 @@ namespace WebApp.Pages.Personaggi
             }
 
            ViewData["OperaId"] = new SelectList(_context.Opera, "OperaId", "Titolo", Personaggio.Opera.Titolo);
-            HttpContext.Session.SetString("videoCorrente", this.Personaggio.VideoPersonaggio);
+
+            if (this.Personaggio.VideoPersonaggio != null)
+            {
+                HttpContext.Session.SetString("videoCorrente", this.Personaggio.VideoPersonaggio);
+            }
 
             return Page();
         }
@@ -87,6 +91,12 @@ namespace WebApp.Pages.Personaggi
                         videoPersonaggio.CopyTo(fs);
                         fs.Flush();
                     }
+
+                    if (HttpContext.Session.GetString("videoCorrente") != null)
+                    {
+                        System.IO.File.Delete("wwwroot/img/VideoPersonaggi/" + HttpContext.Session.GetString("videoCorrente"));
+                    }
+
                 }
             }
 

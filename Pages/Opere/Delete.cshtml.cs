@@ -51,6 +51,14 @@ namespace WebApp.Pages.Opere
             if (Opera != null)
             {
                 _context.Opera.Remove(Opera);
+                if (this.Opera.FotoOpera != null)
+                { 
+                    System.IO.File.Delete("wwwroot/img/" + this.Opera.FotoOpera);                
+                }
+                if (this.Opera.VideoOpera != null)
+                { 
+                    System.IO.File.Delete("wwwroot/img/VideoOpere/" + this.Opera.VideoOpera);
+                }
                 await _context.SaveChangesAsync();
             }
 

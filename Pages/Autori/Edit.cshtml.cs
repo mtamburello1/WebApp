@@ -40,8 +40,16 @@ namespace WebApp.Pages.Autori
                 return NotFound();
             }
 
-            HttpContext.Session.SetString("videoCorrente", this.Autore.VideoAutore);
-            HttpContext.Session.SetString("fotoCorrente", this.Autore.FotoAutore);
+            if (this.Autore.FotoAutore != null)
+            {
+                HttpContext.Session.SetString("fotoCorrente", this.Autore.FotoAutore);
+            }
+
+            if (this.Autore.VideoAutore != null)
+            {
+                 HttpContext.Session.SetString("videoCorrente", this.Autore.VideoAutore);
+            }
+
             return Page();
         }
 
@@ -84,6 +92,13 @@ namespace WebApp.Pages.Autori
                         fotoAutore.CopyTo(fs);
                         fs.Flush();
                     }
+
+                    if (HttpContext.Session.GetString("fotoCorrente") != null)
+                    {
+                        System.IO.File.Delete("wwwroot/img/Autori/" + HttpContext.Session.GetString("fotoCorrente"));
+                    }
+
+
                 }
             }
 
@@ -114,6 +129,13 @@ namespace WebApp.Pages.Autori
                         videoAutore.CopyTo(fs);
                         fs.Flush();
                     }
+
+                    if (HttpContext.Session.GetString("videoCorrente") != null)
+                    {
+                        System.IO.File.Delete("wwwroot/img/VideoAutori/" + HttpContext.Session.GetString("videoCorrente"));
+                    }
+
+
                 }
             }
 

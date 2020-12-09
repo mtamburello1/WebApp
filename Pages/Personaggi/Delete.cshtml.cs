@@ -51,6 +51,9 @@ namespace WebApp.Pages.Personaggi
             if (Personaggio != null)
             {
                 _context.Personaggio.Remove(Personaggio);
+                if (this.Personaggio.VideoPersonaggio != null) { 
+                    System.IO.File.Delete("wwwroot/img/VideoPersonaggi/" + this.Personaggio.VideoPersonaggio);
+                }                
                 await _context.SaveChangesAsync();
             }
 

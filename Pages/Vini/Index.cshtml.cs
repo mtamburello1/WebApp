@@ -23,7 +23,9 @@ namespace WebApp.Pages.Vini
 
         public async Task OnGetAsync()
         {
-            Vino = await _context.Vino.ToListAsync();
+            Vino = await _context.Vino
+                .Include(v=>v.ZoneVini)
+                .ToListAsync();
         }
     }
 }

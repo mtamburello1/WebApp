@@ -19,6 +19,16 @@
     <Compile Remove="Migrations\20201201215801_update_entities_Bianco_e_Nero.Designer.cs" />
     <Compile Remove="Migrations\20201202135927_add_entities_for_Bianco_e_Nero.cs" />
     <Compile Remove="Migrations\20201202135927_add_entities_for_Bianco_e_Nero.Designer.cs" />
+    <Compile Remove="Migrations\20201202140733_add_entities_for_Bianco_e_Nero.cs" />
+    <Compile Remove="Migrations\20201202140733_add_entities_for_Bianco_e_Nero.Designer.cs" />
+    <Compile Remove="Migrations\20201202220703_update_entity_Vino.cs" />
+    <Compile Remove="Migrations\20201202220703_update_entity_Vino.Designer.cs" />
+    <Compile Remove="Migrations\20201203112034_update_entity_Vino_2.cs" />
+    <Compile Remove="Migrations\20201203112034_update_entity_Vino_2.Designer.cs" />
+    <Compile Remove="Migrations\20201203114112_update_entity_Provenienza.cs" />
+    <Compile Remove="Migrations\20201203114112_update_entity_Provenienza.Designer.cs" />
+    <Compile Remove="Migrations\20201203222658_add_entities_for_Bianco_e_Nero.cs" />
+    <Compile Remove="Migrations\20201203222658_add_entities_for_Bianco_e_Nero.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
