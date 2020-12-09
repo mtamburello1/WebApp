@@ -27,7 +27,7 @@ body, .container {
         z-index:1;
     }
 
-    #colSx #text {
+    #colSx #text1 {
         font-size: 18px;
         color: white;
         background-color: rgba(156,156,156, 0.8);
@@ -48,10 +48,14 @@ body, .container {
         left:100px;
     }
 
+    #colSx #text1 #text :nth-child(n+2) {
+        display: none;
+    }
+
 #colDx #rowList {
-    height:100%;
-    width:100%;
-    margin:0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
 }
 
     #colDx ul{
@@ -65,18 +69,12 @@ body, .container {
             background-color:brown;
             font-size:25px;
             font-family:"Global Serif";
-            height:8%;
+            height:40px;
             margin-bottom:10px;
             text-align: right;
             padding:0;
         }
-
-        #colDx ul form {
-            height:100%;
-            width:100%;
-        }
-            
-
+                
             #colDx ul li button {
                 height: 100%;
                 color: white;

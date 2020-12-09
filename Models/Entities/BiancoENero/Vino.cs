@@ -9,6 +9,15 @@ namespace WebApp.Models.Entities.BiancoENero
     public class Vino
     {
 
+        public Vino(String nome, String storia, string caratteristiche, string tipo) 
+        {
+            this.NomeVino = nome;
+            this.StoriaVino = storia;
+            this.CaratteristicheVino = caratteristiche;
+            this.TipoVino = tipo;
+            this.ZoneVini = new HashSet<ZonaVino>();
+        }
+
         [Key]
         [Display(Name = "Denominazione")]
         public string NomeVino { get; set; }

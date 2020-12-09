@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using WebApp.Models.Entities.BiancoENero;
 
 namespace WebApp.Pages.Bianco_e_Nero.IViniDelTerritorio
@@ -18,40 +20,59 @@ namespace WebApp.Pages.Bianco_e_Nero.IViniDelTerritorio
             _context = context;
         }
 
-        public IList<String> ListaVini { get; set; }
+        public IList<Vino> ListaVini { get; set; }
         public Vino Vino { get; set; }
-        public IList<Provenienza> Provenienze { get; set; }
+        public IList<ZonaVino> ZoneVini { get; set; }
 
         public async Task OnGet()
         {
-            /*provare a mettere l'id nel get*/
             String tipo = Request.Query["id"].ToString();
-            
-            ListaVini= await _context.Vino
+
+            ListaVini = await _context.Vino
             .Where(v => v.TipoVino.Equals(tipo))
-            .Select(v => v.NomeVino)
             .AsNoTracking()
             .ToListAsync();
 
             ViewData["Vini"] = ListaVini;
-            
+
         }
 
-        public async void OnPostWinesAsync(string Nome)
+        public async Task<IActionResult> OnPostSend()
         {
-            Console.WriteLine("sono dentro");
-            Vino= await _context.Vino
-            .AsNoTracking()
-            .FirstOrDefaultAsync(v => v.NomeVino.Equals(Nome));
+            MemoryStream stream = new MemoryStream();
+            Request.Body.CopyTo(stream);
+            stream.Position = 0;
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                string requestBody = reader.ReadToEnd();
+                if (requestBody.Length > 0)
+                {
+                    var obj = JsonConvert.DeserializeObject<PostData>(requestBody);
+                    if (obj != null)
+                    {
+                        Vino = await _context.Vino
+                        .AsNoTracking()
+                        .FirstOrDefaultAsync(v => v.TipoVino.Equals(obj.Item2) & v.NomeVino.Equals(obj.Item1));
 
-            ViewData["Storia"] = Vino.StoriaVino;
-            ViewData["Caratteristiche"] = Vino.CaratteristicheVino;
-
-            Provenienze = await _context.Provenienza
-            .Where(p => p.NomeVino.Equals(Vino.NomeVino))
-            .AsNoTracking()
-            .ToListAsync();
-
+                    }
+                }
+            }
+            List<string> dati = new List<string>
+            {
+                Vino.StoriaVino,
+                Vino.CaratteristicheVino
+            };
+            return new JsonResult(dati);
         }
+
     }
+    public class PostData
+    {
+        public string Item1 { get; set; }
+        public string Item2 { get; set; }
+    }
+
+    
 }
+
+

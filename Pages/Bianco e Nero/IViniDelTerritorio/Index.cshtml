@@ -4,18 +4,27 @@
 }
 <link rel="stylesheet" href="~/css/BiancoENeroCss/IViniDelTerritorioStyle.css" type="text/css" />
 
-<div class="container" id="container">
+<div class="container-fluid" id="container">
     <div class="row" id="row">
         <div class="col-sm" id="col">
-            <h1>
-                <b>SELEZIONA UN BAMVINO</b>
-            </h1>
-            <a asp-page="./SchedaVini" asp-route-id="rosso">
-                <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboRosso.png" id="rosso" />
-            </a>
-            <a asp-page="./SchedaVini" asp-route-id="bianco">
-                <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboBiondo.png" id="biondo"/>
-            </a>
+            <img src="~/BiancoENeroImg/IViniDelTerritorio/Puglia2.png" id="sfondo" />
+            <div class="row" id="firstRow">
+                <h1>
+                    <b>SELEZIONA UN BAMVINO</b>
+                </h1>
+            </div>
+            <div class="row" id="secondRow">
+                <div class="col-sm-6">
+                    <a asp-page="./SchedaVini" asp-route-id="rosso">
+                        <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboRosso.png" id="rosso" />
+                    </a>
+                </div>
+                <div class="col-sm-6">
+                    <a asp-page="./SchedaVini" asp-route-id="bianco">
+                        <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboBiondo.png" id="biondo" />
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
