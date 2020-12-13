@@ -1,0 +1,64 @@
+﻿@page
+@model WebApp.Pages.Bianco_e_Nero.IViniDelTerritorio.SchedaViniModel
+@{
+    ViewData["Title"] = "I vini del territorio";
+}
+<link rel="stylesheet" href="~/css/BiancoENeroCss/SchedaViniStyle.css" type="text/css" />
+<div class="container-fluid" id="container">
+    <div class="row" id="row">
+        <div class="col-sm-8" id="colSx">
+            <img src="~/BiancoENeroImg/IViniDelTerritorio/Puglia.png" id="cartina"/>
+            <div class="containerLocator">
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/TuttoIlTerritorio.png" class="locator" id="Tuttoilterritorio" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Barletta.png" class="locator" id="Barletta" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Castel del Monte.png" class="locator" id="CasteldelMonte" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Bari.png" class="locator" id="Bari" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Taranto.png" class="locator" id="Taranto" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Salento.png" class="locator" id="Salento" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Brindisi.png" class="locator" id="Brindisi" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Lecce.png" class="locator" id="Lecce" />
+            </div>
+            <div id="text1">
+                @Html.AntiForgeryToken()
+                <div id="text">
+                </div>
+                <span id="button">
+                    <input type="hidden" id="hidden" value="0">
+                    <button type="button" class="rounded-circle" id="left" disabled>
+                        <b> < </b>
+                    </button>
+                    <button type="button" class="rounded-circle" id="right">
+                        <b> > </b>
+                    </button>
+                </span>
+            </div>
+            @if (Request.Query["id"].ToString().Equals("rosso"))
+            {
+                <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboRosso.png" id="imageBimbo"/>
+            }
+            else if (Request.Query["id"].ToString().Equals("bianco"))
+            {
+                <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboBiondo.png" id="imageBimbo"/>
+            }
+            else {
+                NotFound();
+            }
+        </div>
+        <div class="col-sm-4" id="colDx">
+            <div class="row" id="rowList">
+                <ul>
+                    @foreach(var item in ViewBag.Vini)
+                    { 
+                        <li class="col-lg-12 col-sm">
+                                <input type="hidden" class="tipoVino" value="@item.TipoVino"/>
+                                <button type="button" class="btnPost" value="@item.NomeVino">@item.NomeVino</button>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.0.min.js" type="text/javascript"></script>
+<script src="~/js/BiancoENeroJs/IViniDelTerritorio/IViniDelTerritorio.js"></script>
+<script src="~/js/BiancoENeroJs/IViniDelTerritorio/ChangePage - IViniDelTerritorio.js"></script>

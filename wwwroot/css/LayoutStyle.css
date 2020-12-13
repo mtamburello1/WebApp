@@ -1,4 +1,6 @@
-﻿html, body {
+﻿@charset "UTF-8";
+
+html, body {
     min-height: 100%;
     width: 100%;
     margin: 0;
@@ -6,7 +8,7 @@
 }
 
 body {
-    background-image: url(sfondo.jpg);
+    background-image: url(Sfondo/SfondoMaxi.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -35,12 +37,18 @@ nav {
     nav h1 {
         display: inline;
         color: white;
-        font-size: 40px;
+        font-size: 50px;
         max-width: inherit;
+        font-family: "Global Serif";
+    }
+
+    nav .container {
+        width:80%;
+        max-width:none !important;
     }
 
 div .burger {
-    width: 35%;
+    width: 40px;
     float: left;
     padding-top: 20px;
 }
@@ -166,7 +174,10 @@ div .burger {
 
 footer .container {
     color: white;
+    left: 0;
     margin-left: 0;
+    bottom: 0;
+    position: relative;
 }
 
 
@@ -177,7 +188,43 @@ footer .container {
     }
 
     body {
+        background-image:url("Sfondo/SfondoMini.jpg");
         width: inherit;
         height: inherit;
     }
+
+    .container #title {
+        width: 100%;
+    }
+
+    #menuToggle {
+        padding: 10px 20px;
+    }
+
+        #menuToggle input {
+            left: 15px;
+        }
+
+    nav h1 {
+        font-size:35px;
+    }
 }
+
+@media screen and (max-width: 371px) {
+
+    .container {
+        padding:0;
+    }
+
+    #menuToggle {
+        padding:10px 20px;
+    }
+
+    nav h1 {
+        font-size: 25px;
+        margin-bottom:10px;
+    }
+
+}
+
+

@@ -8,14 +8,14 @@
 <h1>Details</h1>
 
 <div>
-    <h4>Personaggio</h4>
+    <h2>Personaggio</h2>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Personaggio.VideoPersonaggio)
+            @Html.DisplayNameFor(model => model.Personaggio.NomePersonaggio)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Personaggio.VideoPersonaggio)
+            @Html.DisplayFor(model => model.Personaggio.NomePersonaggio)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Personaggio.TestoPersonaggio)
@@ -27,7 +27,13 @@
             @Html.DisplayNameFor(model => model.Personaggio.Opera)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Personaggio.Opera.OperaId)
+            @Html.DisplayFor(model => model.Personaggio.Opera.Titolo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Personaggio.VideoPersonaggio)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Personaggio.VideoPersonaggio)
         </dd>
     </dl>
 </div>

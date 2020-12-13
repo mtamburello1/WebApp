@@ -1,0 +1,54 @@
+﻿@page
+@model WebApp.Pages.Vini.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vino[0].NomeVino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vino[0].StoriaVino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vino[0].CaratteristicheVino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vino[0].TipoVino)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Vino) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeVino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StoriaVino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaratteristicheVino)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoVino)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.NomeVino">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.NomeVino">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.NomeVino">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

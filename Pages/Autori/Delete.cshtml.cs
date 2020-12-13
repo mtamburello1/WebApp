@@ -50,6 +50,14 @@ namespace WebApp.Pages.Autori
             if (Autore != null)
             {
                 _context.Autore.Remove(Autore);
+                if(this.Autore.FotoAutore!=null)
+                {
+                    System.IO.File.Delete("wwwroot/img/Autori/" + this.Autore.FotoAutore);
+                }
+                if(this.Autore.VideoAutore!=null)
+                {
+                    System.IO.File.Delete("wwwroot/img/VideoAutori/" + this.Autore.VideoAutore);
+                }
                 await _context.SaveChangesAsync();
             }
 

@@ -1,0 +1,26 @@
+﻿@page
+@{
+    ViewData["Title"] = "RiConosci i Vini?";
+}
+
+<link rel="stylesheet" href="~/css/BiancoENeroCss/RiConosciIViniStyle.css" type="text/css" />
+
+<div class="container-fluid" id="container">
+            <div class="row" id="firstRow">
+                <h1>
+                    <b>SELEZIONA UN BAMVINO</b>
+                </h1>
+            </div>
+            <div class="row" id="secondRow">
+                <div class="col-sm-6 col-xs-2" id="colSx">
+                    <a asp-page="./RiConosciIViniPlay" asp-route-id="bianco">
+                        <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboBiondo.png" id="rosso" />
+                    </a>
+                </div>
+                <div class="col-sm-6 col-xs-2" id="colDx">
+                    <a asp-page="./RiConosciIViniPlay" asp-route-id="rosso">
+                        <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboRosso.png" id="biondo" />
+                    </a>
+                </div>
+            </div>
+</div>

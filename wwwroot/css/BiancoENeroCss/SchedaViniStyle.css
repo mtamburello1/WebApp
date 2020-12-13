@@ -1,0 +1,172 @@
+﻿html {
+    height:auto;
+}
+body, .container {
+    height:100%;
+}
+
+#container {
+    height:100%;
+    width:90%;
+    margin:80px;
+    padding:0;
+}
+
+#row {
+    width:100%;
+}
+
+#row, #colSx, #colDx {
+    padding: 0;
+    margin:0;
+}
+    .containerLocator {
+        position: absolute;
+        width:60%;
+        height:100%;
+        top: 0px;
+        left: 0px;
+    }
+        .containerLocator .locator {
+            width: 90px;
+            height: 60px;
+            position:absolute;
+            display:none;
+        }
+
+            .containerLocator #TuttoilTerritorio {
+                top: 8%;
+                left: 5%;
+                width: 100px;
+                height: 90px;
+            }
+             
+            .containerLocator #Barletta {
+                top: 18%;
+                left: 21%;
+            }
+             
+            .containerLocator #CasteldelMonte {
+                top: 31%;
+                left: 28%;
+                height: 80px;
+            }
+            
+            .containerLocator #Bari{
+                top: 30%;
+                left: 42%;
+            }
+            
+            .containerLocator #Taranto{
+                top: 56%;
+                left: 54%;
+            }
+            
+            
+            .containerLocator #Salento{
+                top: 64%;
+                left: 67%;
+            }
+            
+            .containerLocator #Brindisi{
+                top: 53%;
+                left: 74%;
+            }
+
+            .containerLocator #Lecce{
+                top: 64%;
+                left: 83%;
+            }
+
+    #colSx #cartina {
+        width: 60%;
+        height: auto;
+        z-index: 1;
+    }
+
+    #colSx #text1 {
+        font-size: 18px;
+        color: white;
+        background-color: rgba(156,156,156, 0.8);
+        position: absolute;
+        top:0;
+        left:50%;
+        width:40%;
+        min-height:30%;
+        padding: 15px;
+        display:none;
+    }
+    
+    #colSx #imageBimbo {
+        width:18%;
+        border-radius: 50%;
+        border: 5px solid brown;
+        position: absolute;
+        bottom:10%;
+        left:8%;
+        background-color:aliceblue;
+    }
+
+    #colSx #text1 #text :nth-child(n+2) {
+        display: none;
+    }
+
+#colDx #rowList {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+    #colDx ul{
+        list-style-type:none;
+        padding:10px;
+        width:100%;
+        height:100%;
+    }
+    
+        #colDx ul li {
+            background-color:brown;
+            font-size:25px;
+            font-family:"Global Serif";
+            height:40px;
+            margin-bottom:10px;
+            text-align: right;
+            padding:0;
+        }
+                
+            #colDx ul li button {
+                height: 100%;
+                color: white;
+                width: 100%;
+                background-color: brown;
+                border: 0;
+                font-weight: bold;
+                padding: 5px;
+            }
+
+            #colDx ul li button:active, #colDx ul li button:hover,#colDx ul li button:focus {
+                background-color:white;
+                color: brown;
+            }
+
+#button {
+    right: 20px;
+    bottom: 20px;
+    position: absolute;
+}
+
+    #button b {
+        vertical-align: middle;
+        font-size: 24px;
+    }
+
+    #button #left, #button #right {
+        border: none;
+        color: brown;
+        font-size: 20px;
+        background-color: white;
+        width: 35px;
+        height: 35px;
+        padding: 1px 4px;
+    }
+

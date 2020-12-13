@@ -1,0 +1,222 @@
+﻿@charset "UTF-8";
+
+html, body {
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(../Sfondo/Botti.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-color: white;
+    color: white;
+    font-family: "Global Serif";
+}
+
+
+.container {
+    height: 100%;
+}
+
+    .container #title {
+        width: 60%;
+        text-align: center;
+        font-size: 40px;
+    }
+
+
+nav {
+    background-color: brown;
+    height: 100%;
+}
+
+    nav h1 {
+        display: inline;
+        color: white;
+        font-size: 50px;
+        max-width: inherit;
+        font-family: "Global Serif";
+    }
+
+    nav .container {
+        width: 80%;
+        max-width: none !important;
+    }
+
+div .burger {
+    width: 40px;
+    float: left;
+    padding-top: 20px;
+}
+
+#menuToggle {
+    display: block;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    padding: 10px 50px;
+    margin-top: 50px;
+}
+
+    #menuToggle a {
+        font-family: 'Global Serif';
+        font-size: 20px;
+        text-decoration: none;
+        color: white;
+        transition: color 0.3s ease;
+    }
+
+        #menuToggle a:hover {
+            color: black;
+        }
+
+
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: 75px;
+        left: 45px;
+        cursor: pointer;
+        opacity: 0; /* hide this */
+        z-index: 2; /* and place it over the hamburger */
+        -webkit-touch-callout: none;
+    }
+
+    /* hamburger */
+    #menuToggle .burger span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 4px;
+        position: relative;
+        background: white;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 5px -2px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+    }
+
+        #menuToggle .burger span:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        #menuToggle .burger span:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+
+    /* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+    #menuToggle input:checked ~ .burger span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-6px, -17px);
+        background: white;
+    }
+
+ /*
+ * But let's hide the middle one.
+ */
+        #menuToggle input:checked ~ .burger span:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+
+ /*
+ * The last one should go the other direction
+ */
+        #menuToggle input:checked ~ .burger span:nth-last-child(2) {
+            transform: rotate(-45deg) translate(-1px, 13px);
+        }
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu {
+    position: absolute;
+    width: 300px;
+    margin: -80px 0 0 -50px;
+    padding: 50px 30px;
+    padding-top: 155px;
+    background-color: transparent;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    z-index: 1;
+}
+
+    #menu li {
+        padding: 5px 5px;
+        font-size: inherit;
+        margin: 7px 0;
+        background-color: brown;
+        font-family: 'Global Serif';
+    }
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul {
+    transform: none;
+}
+
+footer .container {
+    color: white;
+    left: 0;
+    margin-left: 0;
+    bottom: 0;
+    position: relative;
+}
+
+
+@media screen and (max-width: 992px) {
+    html {
+        width: 992px;
+        height: auto;
+    }
+
+
+    .container #title {
+        width: 100%;
+    }
+
+    #menuToggle {
+        padding: 10px 20px;
+    }
+
+        #menuToggle input {
+            left: 15px;
+        }
+
+    nav h1 {
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 371px) {
+
+    .container {
+        padding: 0;
+    }
+
+    #menuToggle {
+        padding: 10px 20px;
+    }
+
+    nav h1 {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+}

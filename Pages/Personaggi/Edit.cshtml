@@ -7,11 +7,11 @@
 
 <h1>Edit</h1>
 
-<h4>Personaggio</h4>
+<h2>Personaggio</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Personaggio.PersonaggioId" />
             <div class="form-group">
@@ -20,9 +20,9 @@
                 <span asp-validation-for="Personaggio.OperaId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Personaggio.VideoPersonaggio" class="control-label"></label>
-                <input asp-for="Personaggio.VideoPersonaggio" class="form-control" />
-                <span asp-validation-for="Personaggio.VideoPersonaggio" class="text-danger"></span>
+                <label asp-for="Personaggio.NomePersonaggio" class="control-label"></label>
+                <input asp-for="Personaggio.NomePersonaggio" class="form-control" />
+                <span asp-validation-for="Personaggio.NomePersonaggio" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Personaggio.TestoPersonaggio" class="control-label"></label>
@@ -30,7 +30,12 @@
                 <span asp-validation-for="Personaggio.TestoPersonaggio" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <label asp-for="Personaggio.VideoPersonaggio" class="control-label"></label>
+                <input asp-for="Personaggio.VideoPersonaggio" class="form-control"  type="file" accept="video/mp4"  name="videoPersonaggio" />
+                <span asp-validation-for="Personaggio.VideoPersonaggio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" asp-page-handler="Upload"/>
             </div>
         </form>
     </div>

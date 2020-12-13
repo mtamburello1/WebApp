@@ -1,0 +1,36 @@
+﻿@charset "UTF-8";
+
+html, body {
+    height:auto;
+    width:100%;
+}
+
+#container {
+    margin: 50px auto;
+}
+
+
+.rating-header {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+
+
+.btn-primary {
+    background-color: brown;
+    color: white;
+    border-color: brown;
+    margin-top: 50px;
+    width:50%;
+
+}
+
+    .btn-primary:hover,  input[type]:active {
+        background-color: white;
+        color: brown;
+        border: 2px solid brown;
+        font-weight: 500;
+    }
+
+

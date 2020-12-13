@@ -1,0 +1,49 @@
+﻿@page
+@{
+    ViewData["Title"] = "Raccolta";
+}
+<link rel="stylesheet" href="~/css/BiancoENeroCss/RaccoltaStyle.css" type="text/css" />
+
+<div class="container" id="container">
+    <div class="row" id="row">
+        <div class="col-lg-7 col-sm-12 col-xs-12" id="colSx">
+            <h1>Raccolta</h1>
+            <video src="~/BiancoENeroImg/AppuntiDiViticoltura/Video/Raccolta.mp4" alt="NOT FOUND" />
+        </div>
+        <div class="col-lg-4 col-sm-12 col-xs-12" id="colDx">
+            <p id="text">
+                <span id="par0">
+                    Il periodo per la raccolta varia tra luglio ed ottobre (nell' emisfero boreale) e tra febbraio e aprile (nell'emisfero australe),
+                    dipende da molti fattori, anche se in maniera generica si identifica con il periodo in cui le uve hanno raggiunto il grado di maturazione desiderato,
+                    cioè quando nell'acino il rapporto tra la percentuale di zuccheri e quella di acidi ha raggiunto il valore ottimale per il tipo di vino che si vuole produrre.
+                </span>
+                <span id="par1" style="display:none;">
+                    Se questo parametro è genericamente valido per le uve da tavola,
+                    nel caso di uve destinate alla produzione del vino è necessario considerare ulteriori parametri per decidere quando e come vendemmiare.
+                </span>
+                <span id="par2" style="display:none;">
+                    Il momento della vendemmia può dipendere da:
+                    condizioni climatiche: all'aumentare della latitudine le uve maturano più tardi;
+                    zona di produzione: nell'emisfero boreale le uve delle vigne esposte a sud maturano prima di quelle esposte a nord; inversamente nell'emisfero australe le uve delle vigne esposte a nord maturano prima di quelle esposte a sud; in entrambi casi all'aumentare dell'altitudine le uve maturano prima;
+                    tipo di uva: i vitigni a bacca bianca maturano in genere prima dei vitigni a bacca rossa;
+                    tipo di vino che si vuole ottenere, determinato dalla maggiore o minore presenza di alcuni componenti, quali:
+                    zuccheri, un maggior tenore di zucchero aumenterà il grado alcolico del vino prodotto; inoltre un giusto tenore zuccherino è indispensabile per avviare la fermentazione alcolica;
+                    acidi, le sostanze acide sono necessarie sia per evitare la proliferazione di batteri (e quindi di malattie), sia per la successiva conservazione del vino;
+                    componenti aromatici, variano durante la maturazione dell'uva, e contribuiscono a determinare le caratteristiche organolettiche del vino.
+                </span> 
+
+            </p>
+            <span id="button">
+                <span id="hidden" value="0"></span>
+                <button type="button" class="rounded-circle" id="left" disabled>
+                    <b> < </b>
+                </button>
+                <button type="button" class="rounded-circle" id="right">
+                    <b> > </b>
+                </button>
+            </span>
+        </div> 
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.4.0.min.js" type="text/javascript"></script>
+<script src="~/js/BiancoENeroJs/ChangePage.js"></script>

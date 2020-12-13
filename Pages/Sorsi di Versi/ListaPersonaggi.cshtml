@@ -1,0 +1,32 @@
+﻿@page 
+@model WebApp.Pages.ListaPersonaggiModel
+@{
+}
+
+<link rel="stylesheet" href="~/css/ListaPersonaggiStyle.css" type="text/css" />
+
+<div class="container" id="container">
+    <h1 id="h1LP40"><b>I PERSONAGGI</b></h1>
+    <hr />
+    @foreach (var personaggio in Model.Opera.Personaggi)
+    {
+        <div class="row">
+
+            <div class="col-sm-5" id="img">
+                <video controls>
+                    <source src="~/img/VideoPersonaggi/@personaggio.VideoPersonaggio" />
+                    Spiacenti, il video non è al momento disponibile.
+                </video>
+            </div>
+
+            <div class="col-sm-6" id="text">
+                <p id="p1LP20"><b>@personaggio.NomePersonaggio</b></p>
+                <p id="p2LP20">
+                    @personaggio.TestoPersonaggio
+                </p>
+            </div>
+        </div>
+        <hr />
+    }
+</div>
+    

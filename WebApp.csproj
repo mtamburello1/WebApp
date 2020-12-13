@@ -2,16 +2,52 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-WebApp-1FDF224A-44D2-4774-B5A8-3C7791FBF15A</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
+    <Compile Remove="wwwroot\img\VideoOpere\**" />
+    <Content Remove="wwwroot\img\VideoOpere\**" />
+    <EmbeddedResource Remove="wwwroot\img\VideoOpere\**" />
+    <None Remove="wwwroot\img\VideoOpere\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201201144033_Add_Entities_for_Bianco_e_Nero.cs" />
+    <Compile Remove="Migrations\20201201144033_Add_Entities_for_Bianco_e_Nero.Designer.cs" />
+    <Compile Remove="Migrations\20201201215801_update_entities_Bianco_e_Nero.cs" />
+    <Compile Remove="Migrations\20201201215801_update_entities_Bianco_e_Nero.Designer.cs" />
+    <Compile Remove="Migrations\20201202135927_add_entities_for_Bianco_e_Nero.cs" />
+    <Compile Remove="Migrations\20201202135927_add_entities_for_Bianco_e_Nero.Designer.cs" />
+    <Compile Remove="Migrations\20201202140733_add_entities_for_Bianco_e_Nero.cs" />
+    <Compile Remove="Migrations\20201202140733_add_entities_for_Bianco_e_Nero.Designer.cs" />
+    <Compile Remove="Migrations\20201202220703_update_entity_Vino.cs" />
+    <Compile Remove="Migrations\20201202220703_update_entity_Vino.Designer.cs" />
+    <Compile Remove="Migrations\20201203112034_update_entity_Vino_2.cs" />
+    <Compile Remove="Migrations\20201203112034_update_entity_Vino_2.Designer.cs" />
+    <Compile Remove="Migrations\20201203114112_update_entity_Provenienza.cs" />
+    <Compile Remove="Migrations\20201203114112_update_entity_Provenienza.Designer.cs" />
+    <Compile Remove="Migrations\20201203222658_add_entities_for_Bianco_e_Nero.cs" />
+    <Compile Remove="Migrations\20201203222658_add_entities_for_Bianco_e_Nero.Designer.cs" />
+    <Compile Remove="Migrations\20201211171701_update-entities-Zona-and-Vino.cs" />
+    <Compile Remove="Migrations\20201211171701_update-entities-Zona-and-Vino.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\BiancoENeroImg\IlVinoUnaLungaStoria\" />
+    <Folder Include="wwwroot\img\VideoPersonaggi\" />
+    <Folder Include="wwwroot\img\VideoAutori\" />
   </ItemGroup>
 
 </Project>

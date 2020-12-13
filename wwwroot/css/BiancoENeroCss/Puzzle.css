@@ -1,0 +1,17 @@
+#intorno {
+	display: block;
+	margin: 0 auto;
+}
+
+#fondo {
+	opacity: 0.3;
+}
+
+
+body {
+	background-image: url(/css/Sfondo/Botti.png);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+

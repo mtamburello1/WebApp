@@ -1,0 +1,65 @@
+﻿@page
+@model WebApp.Pages.AggiuntaRecensioneModel
+@{
+}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="~/css/AggiuntaRecensioneStyle.css" type="text/css" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<div class="container" id="container">
+    <h4 id="h4AR24">Aggiungi una recensione</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Recensione.ValoreRecensione" class="control-label" for="rating" id="votoAR16"></label>
+                    <input asp-for="Recensione.ValoreRecensione" type="hidden" id="selected_rating" required="required" class="form-control" /><br />
+                    <span asp-validation-for="Recensione.ValoreRecensione" class="text-danger"></span>
+                </div>
+                <div id="rating-ability-wrapper">
+                    <h2 class="bold rating-header">
+                        <span class="selected-rating" id="span0AR30">0</span><small id="small5AR24"> / 5</small>
+                    </h2>
+                    <button type="button" class="btnrating btn btn-default btn-lg" data-attr="1" id="rating-star-1">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btnrating btn btn-default btn-lg" data-attr="2" id="rating-star-2">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btnrating btn btn-default btn-lg" data-attr="3" id="rating-star-3">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btnrating btn btn-default btn-lg" data-attr="4" id="rating-star-4">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </button>
+                    <button type="button" class="btnrating btn btn-default btn-lg" data-attr="5" id="rating-star-5">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Recensione.Titolo" class="control-label" id="testoAR16"></label>
+                    <input asp-for="Recensione.Titolo" class="form-control" />
+                    <span asp-validation-for="Recensione.Titolo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Recensione.TestoRecensione" class="control-label" id="descrizioneAR16"></label>
+                    <textarea asp-for="Recensione.TestoRecensione" class="form-control"></textarea>
+                    <span asp-validation-for="Recensione.TestoRecensione" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Recensione.OperaId" class="control-label" id="operaAR16"></label>
+                    <select asp-for="Recensione.OperaId" class="form-control" asp-items="ViewBag.OperaId"></select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" id="butAR16"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="~/js/ReviewStars.js"></script>

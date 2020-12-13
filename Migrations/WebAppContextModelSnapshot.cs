@@ -14,7 +14,7 @@ namespace WebApp.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.9")
+                .HasAnnotation("ProductVersion", "3.1.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -42,6 +42,55 @@ namespace WebApp.Migrations
                     b.ToTable("Autore");
                 });
 
+            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Vino", b =>
+                {
+                    b.Property<string>("NomeVino")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("CaratteristicheVino")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StoriaVino")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TipoVino")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("NomeVino");
+
+                    b.ToTable("Vino");
+                });
+
+            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Zona", b =>
+                {
+                    b.Property<string>("NomeZona")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("VinoNomeVino")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("NomeZona");
+
+                    b.HasIndex("VinoNomeVino");
+
+                    b.ToTable("Zona");
+                });
+
+            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.ZonaVino", b =>
+                {
+                    b.Property<string>("NomeZona")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("NomeVino")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("NomeZona", "NomeVino");
+
+                    b.HasIndex("NomeVino");
+
+                    b.ToTable("ZonaVino");
+                });
+
             modelBuilder.Entity("WebApp.Models.Opera", b =>
                 {
                     b.Property<long>("OperaId")
@@ -55,17 +104,37 @@ namespace WebApp.Migrations
                     b.Property<string>("Contesto")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("FiveStars")
+                        .HasColumnType("int");
+
                     b.Property<string>("FotoOpera")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FourStars")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NumeroVoti")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OneStars")
+                        .HasColumnType("int");
 
                     b.Property<float>("Prezzo")
                         .HasColumnType("real");
 
+                    b.Property<int>("ThreeStars")
+                        .HasColumnType("int");
+
                     b.Property<string>("Titolo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Trama")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TwoStars")
+                        .HasColumnType("int");
 
                     b.Property<string>("VideoOpera")
                         .HasColumnType("nvarchar(max)");
@@ -83,6 +152,9 @@ namespace WebApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("NomePersonaggio")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("OperaId")
                         .HasColumnType("bigint");
@@ -107,10 +179,18 @@ namespace WebApp.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("NomeRecensore")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<long>("OperaId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("TestoRecensione")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Titolo")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("ValoreRecensione")
@@ -121,6 +201,28 @@ namespace WebApp.Migrations
                     b.HasIndex("OperaId");
 
                     b.ToTable("Recensione");
+                });
+
+            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.Zona", b =>
+                {
+                    b.HasOne("WebApp.Models.Entities.BiancoENero.Vino", null)
+                        .WithMany("Zone")
+                        .HasForeignKey("VinoNomeVino");
+                });
+
+            modelBuilder.Entity("WebApp.Models.Entities.BiancoENero.ZonaVino", b =>
+                {
+                    b.HasOne("WebApp.Models.Entities.BiancoENero.Vino", "Vino")
+                        .WithMany("ZoneVini")
+                        .HasForeignKey("NomeVino")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebApp.Models.Entities.BiancoENero.Zona", "Zona")
+                        .WithMany("ZoneVini")
+                        .HasForeignKey("NomeZona")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("WebApp.Models.Opera", b =>

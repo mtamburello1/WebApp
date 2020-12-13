@@ -26,9 +26,17 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-
+            services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
+            services.Configure<IISServerOptions>(options =>
+            {
+                options.AllowSynchronousIO = true;
+            });
             services.AddDbContext<WebAppContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("WebAppContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddMvc()
+        .AddSessionStateTempDataProvider();
+            services.AddSession();
 
         }
 
@@ -53,6 +61,8 @@ namespace WebApp
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
