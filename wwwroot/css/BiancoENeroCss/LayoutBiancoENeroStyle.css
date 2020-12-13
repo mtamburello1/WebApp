@@ -205,6 +205,12 @@ footer .container {
     }
 }
 
+@media screen and (max-width: 600px) {
+    body {
+        background-size: cover;
+    }
+}
+
 @media screen and (max-width: 371px) {
 
     .container {
