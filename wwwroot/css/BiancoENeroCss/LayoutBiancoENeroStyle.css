@@ -11,7 +11,7 @@ body {
     background-image: url(../Sfondo/Botti.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100% 100%;
+    background-size: cover;
     background-color: white;
     color: white;
     font-family: "Global Serif";
@@ -205,11 +205,6 @@ footer .container {
     }
 }
 
-@media screen and (max-width: 600px) {
-    body {
-        background-size: cover;
-    }
-}
 
 @media screen and (max-width: 371px) {
 

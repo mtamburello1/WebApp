@@ -9,7 +9,7 @@ body, #container {
 #container {
     width:100%;
     height:100%;
-    margin: 150px auto;
+    margin: 50px auto;
     padding:0;
 }
 
@@ -24,15 +24,21 @@ body, #container {
     }
 
     #row a {
-        background-color: white;
         color: brown;
-        width: 49%;
+        width: 100%;
         font-family:"Global Serif";
-        padding: 15px;
-        border-radius: 40px;
     }
-    .row #Sx {
+    
+    #row a .icon{
+        font-family:"Global Serif";
+        height:100%;
+    }
+
+
+    .row #colSx {
         margin-right:2%;
+        padding:0;
+        border-radius:40px;
         background-image: url("../../BiancoENeroImg/GiocareConIlVino/Opera.png");
         background-repeat: no-repeat;
         background-size: cover;
@@ -57,15 +63,16 @@ body, #container {
             position: absolute;
             bottom: 0;
         }
+.row #colDx {
+    background-color:white;
+    border-radius:40px;
+    padding:0;
+}
 
-    .row #colDx, .row #colSx {
-        height:100%;
-    }
-
-    .row #colDx .row {
-        width:99%;
-        margin: 0 auto;
-    }
+.row #colDx .row {
+    width: 99%;
+    margin: 0 auto;
+}
 
         .row #colDx h1 {
             margin: 0 auto;
@@ -85,3 +92,22 @@ body, #container {
             width: 100%;
             height: auto;
         }
+
+@media screen and (max-width:767px) {
+    #container {
+        max-width:none;
+        width:80%;
+    }
+}
+
+@media screen and (max-width:575px){
+    #container {
+        max-width:none;
+        width:90%;
+    }
+
+    #colSx {
+        min-height:667px;
+        margin-bottom: 10px;
+    }
+}
