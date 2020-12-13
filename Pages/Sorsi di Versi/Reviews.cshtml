@@ -17,7 +17,7 @@
             <div class="well well-sm">
                 <div class="row">
                     <div class="col-xs-12 col-md-6 text-center">
-                        <h1 class="rating-num">
+                        <h1 class="rating-num" id="h1R60">
                             @ViewBag.Voto
                         </h1>
                         <div class="rating">
@@ -31,7 +31,7 @@
                             }
                         </div>
                         <div id="voti">
-                            <span class="glyphicon glyphicon-user"></span>@ViewBag.NumeroVoti
+                            <span class="glyphicon glyphicon-user" id="span1R24"></span>@ViewBag.NumeroVoti
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-6">
@@ -108,7 +108,7 @@
                     <div class="row">
                         <div class="col-sm-3 text-center" id="userReview">
                             <img class="rounded-circle reviewer" src="~/css/Sfondo/avatar.png">
-                            <div class="review-block-name"><a href="#">Martina @item.NomeRecensore</a></div>
+                            <div class="review-block-name" id="div1R16"><a href="#">Martina @item.NomeRecensore</a></div>
                         </div>
                         <div class="col-sm-9" id="textReview">
                             <div class="review-block-rate">
@@ -121,8 +121,8 @@
                                     <span class="glyphicon glyphicon-star-empty"></span>
                                 }
                             </div>
-                            <div class="review-block-title">@item.Titolo</div>
-                            <div class="review-block-description">@item.TestoRecensione</div>
+                            <div class="review-block-title" id="div2R20">@item.Titolo</div>
+                            <div class="review-block-description" id="div3R18">@item.TestoRecensione</div>
                         </div>
                     </div>
                     <hr />

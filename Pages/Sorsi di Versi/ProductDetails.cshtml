@@ -16,13 +16,13 @@
     <div class="row">
         <div class="col-xs-3" id="list">
             <ul id="select">
-                <a asp-page="./Trama" asp-route-id="@Request.Query["id"].ToString()"><li><b>Trama</b></li></a>
-                <a asp-page="./Autore" asp-route-id="@Request.Query["id"].ToString()"><li><b>L'autore</b></li></a>
-                <a href="./Trama?id=@Request.Query["id"].ToString()#Contesto"><li><b>Contesto</b></li></a>
-                <a asp-page="./ListaPersonaggi" asp-route-id="@Request.Query["id"].ToString()"><li><b>Personaggi</b></li></a>
-                <a asp-page="./Reviews" asp-route-id="@Request.Query["id"].ToString()"><li><b>Recensioni</b></li></a>
-                <a asp-page="./AggiuntaRecensione" asp-route-id="@Request.Query["id"].ToString()"><li><b>Lascia un commento</b></li></a>
-                <a href="#"><li><b>Acquista</b></li></a>
+                <a asp-page="./Trama" asp-route-id="@Request.Query["id"].ToString()"><li id="li1PD30"><b>Trama</b></li></a>
+                <a asp-page="./Autore" asp-route-id="@Request.Query["id"].ToString()"><li id="li2PD30"><b>L'autore</b></li></a>
+                <a href="./Trama?id=@Request.Query["id"].ToString()#Contesto"><li id="li3PD30"><b>Contesto</b></li></a>
+                <a asp-page="./ListaPersonaggi" asp-route-id="@Request.Query["id"].ToString()"><li id="li4PD30"><b>Personaggi</b></li></a>
+                <a asp-page="./Reviews" asp-route-id="@Request.Query["id"].ToString()"><li id="li5PD30"><b>Recensioni</b></li></a>
+                <a asp-page="./AggiuntaRecensione" asp-route-id="@Request.Query["id"].ToString()"><li id="li6PD30"><b>Lascia un commento</b></li></a>
+                <a href="#"><li id="li7PD30"><b>Acquista</b></li></a>
             </ul>
         </div>
     </div>

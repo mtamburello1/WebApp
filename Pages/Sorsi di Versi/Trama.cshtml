@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="~/css/TramaStyle.css" type="text/css" />
 
 <div class="container" id="container">
-    <h1><b>L'OPERA</b></h1>
+    <h1 id="h1T40"><b>L'OPERA</b></h1>
     <hr />
     <div class="row" id="video">
         <div class="col-sm" id="img">
@@ -18,9 +18,9 @@
     </div>
     <div class="row" id="text">
         <div class="col-xs-3" id="col">
-            <h5><b>@Html.DisplayFor(model => model.Opera.Titolo) - La Trama</b></h5>
+            <h5 id="h5T20"><b>@Html.DisplayFor(model => model.Opera.Titolo) - La Trama</b></h5>
             <br />
-            <p>
+            <p id="p1T20">
                 @Html.DisplayFor(model => model.Opera.Trama)
             </p>
         </div>
@@ -29,9 +29,9 @@
     <a name="Contesto"></a>
     <div class="row" id="text">
         <div class="col-xs-3" id="col">
-            <h5><b>@Html.DisplayFor(model => model.Opera.Titolo) - Il Contesto</b></h5>
+            <h5 id="h52T20"><b>@Html.DisplayFor(model => model.Opera.Titolo) - Il Contesto</b></h5>
             <br />
-            <p>
+            <p id="p2T20">
                 @Html.DisplayFor(model => model.Opera.Contesto)
             </p>
         </div>

@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="~/css/ListaPersonaggiStyle.css" type="text/css" />
 
 <div class="container" id="container">
-    <h1><b>I PERSONAGGI</b></h1>
+    <h1 id="h1LP40"><b>I PERSONAGGI</b></h1>
     <hr />
     @foreach (var personaggio in Model.Opera.Personaggi)
     {
@@ -20,8 +20,8 @@
             </div>
 
             <div class="col-sm-6" id="text">
-                <b>@personaggio.NomePersonaggio</b>
-                <p>
+                <p id="p1LP20"><b>@personaggio.NomePersonaggio</b></p>
+                <p id="p2LP20">
                     @personaggio.TestoPersonaggio
                 </p>
             </div>
