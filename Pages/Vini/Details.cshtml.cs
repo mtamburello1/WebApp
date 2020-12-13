@@ -10,6 +10,7 @@ using WebApp.Models.Entities.BiancoENero;
 
 namespace WebApp.Pages.Vini
 {
+    [BindProperties(SupportsGet = true)]
     public class DetailsModel : PageModel
     {
         private readonly WebApp.Data.WebAppContext _context;
@@ -20,7 +21,7 @@ namespace WebApp.Pages.Vini
         }
 
         public Vino Vino { get; set; }
-
+        public IList<string> Zone { get; set; }
         public async Task<IActionResult> OnGetAsync(string id)
         {
             if (id == null)
@@ -28,7 +29,13 @@ namespace WebApp.Pages.Vini
                 return NotFound();
             }
 
-            Vino = await _context.Vino.FirstOrDefaultAsync(m => m.NomeVino == id);
+            Vino = await _context.Vino
+                .Include(v => v.ZoneVini)
+                .FirstOrDefaultAsync(m => m.NomeVino == id);
+
+            foreach (var item in Vino.ZoneVini) {
+                Zone.Add(item.NomeZona);
+            }
 
             if (Vino == null)
             {

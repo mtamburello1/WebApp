@@ -8,7 +8,17 @@
     <div class="row" id="row">
         <div class="col-sm-8" id="colSx">
             <img src="~/BiancoENeroImg/IViniDelTerritorio/Puglia.png" id="cartina"/>
-            <div id="text1" style="display:none;">
+            <div class="containerLocator">
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/TuttoIlTerritorio.png" class="locator" id="Tuttoilterritorio" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Barletta.png" class="locator" id="Barletta" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Castel del Monte.png" class="locator" id="CasteldelMonte" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Bari.png" class="locator" id="Bari" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Taranto.png" class="locator" id="Taranto" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Salento.png" class="locator" id="Salento" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Brindisi.png" class="locator" id="Brindisi" />
+                <img src="~/BiancoENeroImg/GiocareConIlVino/Locator/Lecce.png" class="locator" id="Lecce" />
+            </div>
+            <div id="text1">
                 @Html.AntiForgeryToken()
                 <div id="text">
                 </div>
@@ -26,9 +36,12 @@
             {
                 <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboRosso.png" id="imageBimbo"/>
             }
-            else
+            else if (Request.Query["id"].ToString().Equals("bianco"))
             {
                 <img src="~/BiancoENeroImg/IViniDelTerritorio/BimboBiondo.png" id="imageBimbo"/>
+            }
+            else {
+                NotFound();
             }
         </div>
         <div class="col-sm-4" id="colDx">
@@ -47,5 +60,5 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.0.min.js" type="text/javascript"></script>
-<script src="~/js/BiancoENeroJs/IViniDelTerritorio.js"></script>
-<script src="~/js/BiancoENeroJs/ChangePage - IViniDelTerritorio.js"></script>
+<script src="~/js/BiancoENeroJs/IViniDelTerritorio/IViniDelTerritorio.js"></script>
+<script src="~/js/BiancoENeroJs/IViniDelTerritorio/ChangePage - IViniDelTerritorio.js"></script>

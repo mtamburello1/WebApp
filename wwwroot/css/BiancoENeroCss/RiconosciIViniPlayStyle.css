@@ -1,0 +1,166 @@
+﻿html {
+    height: auto;
+}
+
+body, .container {
+    height: 100%;
+}
+
+.title {
+    color:white;
+    text-align:center;
+}
+
+#container {
+    height: 100%;
+    width: 90%;
+    margin: 80px;
+    padding: 0;
+}
+
+#row {
+    width: 100%;
+}
+
+#row, #colSx, #colDx {
+    padding: 0;
+    margin: 0;
+}
+
+.containerLocator {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+    .containerLocator .locator, .containerLocator .locatorTrueAndFalse {
+        width: 90px;
+        height: 60px;
+        position: absolute;
+    }
+    
+    .containerLocator .locatorTrueAndFalse {
+        display:none;
+    }
+
+    .containerLocator #Tutto_il_territorio, .containerLocator #Tutto_il_territorio_True, .containerLocator #Tutto_il_territorio_False {
+        top: 8%;
+        left: 5%;
+        width: 100px;
+        height: 90px;
+    }
+
+
+    .containerLocator #Barletta, .containerLocator #Barletta_True, .containerLocator #Barletta_False {
+        top: 18%;
+        left: 21%;
+    }
+
+    .containerLocator #Castel_del_Monte,.containerLocator #Castel_del_Monte_True,.containerLocator #Castel_del_Monte_False {
+        top: 31%;
+        left: 28%;
+        height: 80px;
+    }
+
+    .containerLocator #Bari, .containerLocator #Bari_True, .containerLocator #Bari_False {
+        top: 30%;
+        left: 42%;
+    }
+
+    .containerLocator #Taranto, .containerLocator #Taranto_True, .containerLocator #Taranto_False {
+        top: 56%;
+        left: 54%;
+    }
+
+
+    .containerLocator #Salento, .containerLocator #Salento_True ,.containerLocator #Salento_False {
+        top: 64%;
+        left: 67%;
+    }
+
+    .containerLocator #Brindisi, .containerLocator #Brindisi_True, .containerLocator #Brindisi_False {
+        top: 53%;
+        left: 74%;
+    }
+
+    .containerLocator #Lecce, .containerLocator #Lecce_True, .containerLocator #Lecce_False {
+        top: 64%;
+        left: 83%;
+    }
+
+#colSx #cartina {
+    width: 60%;
+    height: auto;
+    z-index: 1;
+}
+
+#colSx #imageBimbo {
+    width: 18%;
+    border-radius: 50%;
+    border: 5px solid brown;
+    position: absolute;
+    bottom: 10%;
+    left: 8%;
+    background-color: aliceblue;
+}
+
+#colDx #rowList {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+#colDx ul {
+    list-style-type: none;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+    #colDx ul li {
+        background-color: brown;
+        font-size: 25px;
+        font-family: "Global Serif";
+        height: 40px;
+        margin-bottom: 10px;
+        text-align: right;
+        padding: 0;
+    }
+
+        #colDx ul li button {
+            height: 100%;
+            color: white;
+            width: 100%;
+            background-color: brown;
+            border: 0;
+            font-weight: bold;
+            padding: 5px;
+        }
+
+            #colDx ul li button:active, #colDx ul li button:hover, #colDx ul li button:focus {
+                background-color: white;
+                color: brown;
+            }
+
+#button {
+    right: 20px;
+    bottom: 20px;
+    position: absolute;
+}
+
+    #button b {
+        vertical-align: middle;
+        font-size: 24px;
+    }
+
+    #button #left, #button #right {
+        border: none;
+        color: brown;
+        font-size: 20px;
+        background-color: white;
+        width: 35px;
+        height: 35px;
+        padding: 1px 4px;
+    }

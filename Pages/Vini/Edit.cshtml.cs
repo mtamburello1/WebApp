@@ -11,6 +11,7 @@ using WebApp.Models.Entities.BiancoENero;
 
 namespace WebApp.Pages.Vini
 {
+    [BindProperties(SupportsGet = true)]
     public class EditModel : PageModel
     {
         private readonly WebApp.Data.WebAppContext _context;
@@ -20,8 +21,8 @@ namespace WebApp.Pages.Vini
             _context = context;
         }
 
-        [BindProperty]
         public Vino Vino { get; set; }
+        public IEnumerable<string> Zone { get; set; }
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
@@ -30,7 +31,11 @@ namespace WebApp.Pages.Vini
                 return NotFound();
             }
 
-            Vino = await _context.Vino.FirstOrDefaultAsync(m => m.NomeVino == id);
+            Vino = await _context.Vino
+                .Include(v=> v.ZoneVini)
+                .FirstOrDefaultAsync(m => m.NomeVino == id);
+
+            ViewData["Zone"] = new SelectList(_context.Zona, "NomeZona", "NomeZona");
 
             if (Vino == null)
             {
@@ -45,10 +50,16 @@ namespace WebApp.Pages.Vini
         {
             if (!ModelState.IsValid)
             {
+                ViewData["Zone"] = new SelectList(_context.Zona, "NomeZona", "NomeZona");
                 return Page();
             }
 
             _context.Attach(Vino).State = EntityState.Modified;
+
+            if (Zone != null)
+            {
+                ChangeZone();
+            }
 
             try
             {
@@ -56,22 +67,30 @@ namespace WebApp.Pages.Vini
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!VinoExists(Vino.NomeVino))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                
             }
 
             return RedirectToPage("./Index");
         }
 
-        private bool VinoExists(string id)
-        {
-            return _context.Vino.Any(e => e.NomeVino.Equals(id, StringComparison.InvariantCultureIgnoreCase));
+
+        private void ChangeZone() {
+            IList<ZonaVino> z = _context.ZonaVino
+                .Where(x => x.NomeVino.Equals(Vino.NomeVino))
+                .ToList();
+
+            foreach (var item in z)
+            {
+                _context.ZonaVino.Remove(item);
+            }
+
+            Vino.ZoneVini = new HashSet<ZonaVino>();
+            foreach (var nomeZona in Zone)
+            {
+                var zona = _context.Zona.FirstOrDefault(x => x.NomeZona.Equals(nomeZona));
+                var zonaVino = new ZonaVino(zona, this.Vino);
+                this.Vino.ZoneVini.Add(zonaVino);
+            }
         }
     }
 }

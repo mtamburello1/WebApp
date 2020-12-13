@@ -35,6 +35,10 @@
                 <span asp-validation-for="Vino.TipoVino" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label class="control-label">Zone </label>
+                <select asp-for="Zone" asp-items="ViewBag.Zone"></select>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>

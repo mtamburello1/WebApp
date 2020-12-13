@@ -20,11 +20,68 @@ body, .container {
     padding: 0;
     margin:0;
 }
-
-    #colSx #cartina{
+    .containerLocator {
+        position: absolute;
         width:60%;
-        height:auto;
-        z-index:1;
+        height:100%;
+        top: 0px;
+        left: 0px;
+    }
+        .containerLocator .locator {
+            width: 90px;
+            height: 60px;
+            position:absolute;
+            display:none;
+        }
+
+            .containerLocator #TuttoilTerritorio {
+                top: 8%;
+                left: 5%;
+                width: 100px;
+                height: 90px;
+            }
+             
+            .containerLocator #Barletta {
+                top: 18%;
+                left: 21%;
+            }
+             
+            .containerLocator #CasteldelMonte {
+                top: 31%;
+                left: 28%;
+                height: 80px;
+            }
+            
+            .containerLocator #Bari{
+                top: 30%;
+                left: 42%;
+            }
+            
+            .containerLocator #Taranto{
+                top: 56%;
+                left: 54%;
+            }
+            
+            
+            .containerLocator #Salento{
+                top: 64%;
+                left: 67%;
+            }
+            
+            .containerLocator #Brindisi{
+                top: 53%;
+                left: 74%;
+            }
+
+            .containerLocator #Lecce{
+                top: 64%;
+                left: 83%;
+            }
+
+    #colSx #cartina {
+        width: 60%;
+        height: auto;
+        z-index: 1;
     }
 
     #colSx #text1 {
@@ -37,15 +94,17 @@ body, .container {
         width:40%;
         min-height:30%;
         padding: 15px;
+        display:none;
     }
     
     #colSx #imageBimbo {
-        width:180px;
+        width:18%;
         border-radius: 50%;
         border: 5px solid brown;
         position: absolute;
-        bottom:50px;
-        left:100px;
+        bottom:10%;
+        left:8%;
+        background-color:aliceblue;
     }
 
     #colSx #text1 #text :nth-child(n+2) {

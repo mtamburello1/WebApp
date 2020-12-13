@@ -36,6 +36,7 @@ namespace WebApp.Pages.Vini
         {
             if (!ModelState.IsValid)
             {
+                ViewData["Zone"] = new SelectList(_context.Zona, "NomeZona", "NomeZona");
                 return Page();
             }
 

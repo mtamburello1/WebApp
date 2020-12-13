@@ -29,6 +29,8 @@
     <Compile Remove="Migrations\20201203114112_update_entity_Provenienza.Designer.cs" />
     <Compile Remove="Migrations\20201203222658_add_entities_for_Bianco_e_Nero.cs" />
     <Compile Remove="Migrations\20201203222658_add_entities_for_Bianco_e_Nero.Designer.cs" />
+    <Compile Remove="Migrations\20201211171701_update-entities-Zona-and-Vino.cs" />
+    <Compile Remove="Migrations\20201211171701_update-entities-Zona-and-Vino.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

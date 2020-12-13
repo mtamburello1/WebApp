@@ -50,13 +50,19 @@ namespace WebApp.Pages.Zone
 
             _context.Attach(Zona).State = EntityState.Modified;
 
+            if (Zona.NomeZona.Contains(" "))
+            {
+                string newName = Zona.NomeZona.Replace(" ", "_");
+                Zona.NomeZona = newName;
+            }
+
             try
             {
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ZonaExists(Zona.NomeZona))
+                if (ZonaExists(Zona.NomeZona))
                 {
                     return NotFound();
                 }
