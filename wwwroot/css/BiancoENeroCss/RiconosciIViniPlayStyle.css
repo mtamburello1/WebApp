@@ -121,7 +121,7 @@ body, .container {
 
     #colDx ul li {
         background-color: brown;
-        font-size: 25px;
+        font-size: 23px;
         font-family: "Global Serif";
         height: 40px;
         margin-bottom: 10px;
@@ -164,3 +164,21 @@ body, .container {
         height: 35px;
         padding: 1px 4px;
     }
+
+@media screen and (max-width:1200px) {
+
+        .containerLocator .locator, .containerLocator .locatorTrueAndFalse {
+            width: 65px;
+            height: 40px;
+        }
+
+        .containerLocator #Tutto_il_territorio, .containerLocator #Tutto_il_territorio_True, .containerLocator #Tutto_il_territorio_False {
+            width: 70px;
+            height: 60px;
+        }
+
+        .containerLocator #Castel_del_Monte, .containerLocator #Castel_del_Monte_True, .containerLocator #Castel_del_Monte_False {
+            height: 60px;
+        }
+
+}
